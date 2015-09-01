@@ -1,0 +1,558 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F8E147DF1B8EBBE7008ACE01 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E147DE1B8EBBE7008ACE01 /* main.m */; };
+		F8E147E21B8EBBE8008ACE01 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E147E11B8EBBE8008ACE01 /* AppDelegate.m */; };
+		F8E147E51B8EBBE8008ACE01 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E147E41B8EBBE8008ACE01 /* ViewController.m */; };
+		F8E147E81B8EBBE8008ACE01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8E147E61B8EBBE8008ACE01 /* Main.storyboard */; };
+		F8E147EA1B8EBBE8008ACE01 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8E147E91B8EBBE8008ACE01 /* Images.xcassets */; };
+		F8E147ED1B8EBBE8008ACE01 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E147EB1B8EBBE8008ACE01 /* LaunchScreen.xib */; };
+		F8E147F91B8EBBE8008ACE01 /* JFABaseKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E147F81B8EBBE8008ACE01 /* JFABaseKitTests.m */; };
+		F8E1485F1B8EEFB0008ACE01 /* JFATableCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E1485C1B8EEFB0008ACE01 /* JFATableCellItem.m */; };
+		F8E148601B8EEFB0008ACE01 /* JFATableGroupCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E1485E1B8EEFB0008ACE01 /* JFATableGroupCellItem.m */; };
+		F8E148691B8EEFC2008ACE01 /* JFABaseNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E148621B8EEFC2008ACE01 /* JFABaseNavController.m */; };
+		F8E1486A1B8EEFC2008ACE01 /* JFABaseTableGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E148641B8EEFC2008ACE01 /* JFABaseTableGroupViewController.m */; };
+		F8E1486B1B8EEFC2008ACE01 /* JFABaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E148661B8EEFC2008ACE01 /* JFABaseTableViewController.m */; };
+		F8E1486C1B8EEFC2008ACE01 /* JFABaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E148681B8EEFC2008ACE01 /* JFABaseViewController.m */; };
+		F8E148751B8EF830008ACE01 /* UIColor+JFAExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E148741B8EF830008ACE01 /* UIColor+JFAExtend.m */; };
+		F8E148781B8EFB7F008ACE01 /* NSDictionary+JFASafeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E148771B8EFB7F008ACE01 /* NSDictionary+JFASafeObject.m */; };
+		F8E1487B1B8F00F9008ACE01 /* NSMutableDictionary+JFASafeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E1487A1B8F00F9008ACE01 /* NSMutableDictionary+JFASafeObject.m */; };
+		F8E148831B8F34CA008ACE01 /* JFANetWorkService.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E148821B8F34CA008ACE01 /* JFANetWorkService.m */; };
+		F8E148861B8FF117008ACE01 /* NSString+JFAExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E148851B8FF117008ACE01 /* NSString+JFAExtend.m */; };
+		F8E1488E1B8FF5D1008ACE01 /* JFACustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E1488D1B8FF5D1008ACE01 /* JFACustomView.m */; };
+		F8E148911B8FF5FD008ACE01 /* JFALoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E148901B8FF5FD008ACE01 /* JFALoadingView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F8E147F31B8EBBE8008ACE01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8E147D11B8EBBE7008ACE01 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8E147D81B8EBBE7008ACE01;
+			remoteInfo = JFABaseKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F8E147D91B8EBBE7008ACE01 /* JFABaseKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JFABaseKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8E147DD1B8EBBE7008ACE01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8E147DE1B8EBBE7008ACE01 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F8E147E01B8EBBE7008ACE01 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F8E147E11B8EBBE8008ACE01 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F8E147E31B8EBBE8008ACE01 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F8E147E41B8EBBE8008ACE01 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F8E147E71B8EBBE8008ACE01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F8E147E91B8EBBE8008ACE01 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F8E147EC1B8EBBE8008ACE01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F8E147F21B8EBBE8008ACE01 /* JFABaseKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JFABaseKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8E147F71B8EBBE8008ACE01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8E147F81B8EBBE8008ACE01 /* JFABaseKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFABaseKitTests.m; sourceTree = "<group>"; };
+		F8E1485B1B8EEFB0008ACE01 /* JFATableCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JFATableCellItem.h; path = JFABaseKitPodFiles/JFABaseItem/JFATableCellItem.h; sourceTree = SOURCE_ROOT; };
+		F8E1485C1B8EEFB0008ACE01 /* JFATableCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JFATableCellItem.m; path = JFABaseKitPodFiles/JFABaseItem/JFATableCellItem.m; sourceTree = SOURCE_ROOT; };
+		F8E1485D1B8EEFB0008ACE01 /* JFATableGroupCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JFATableGroupCellItem.h; path = JFABaseKitPodFiles/JFABaseItem/JFATableGroupCellItem.h; sourceTree = SOURCE_ROOT; };
+		F8E1485E1B8EEFB0008ACE01 /* JFATableGroupCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JFATableGroupCellItem.m; path = JFABaseKitPodFiles/JFABaseItem/JFATableGroupCellItem.m; sourceTree = SOURCE_ROOT; };
+		F8E148611B8EEFC2008ACE01 /* JFABaseNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JFABaseNavController.h; path = JFABaseKitPodFiles/JFABaseViewController/JFABaseNavController.h; sourceTree = SOURCE_ROOT; };
+		F8E148621B8EEFC2008ACE01 /* JFABaseNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JFABaseNavController.m; path = JFABaseKitPodFiles/JFABaseViewController/JFABaseNavController.m; sourceTree = SOURCE_ROOT; };
+		F8E148631B8EEFC2008ACE01 /* JFABaseTableGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JFABaseTableGroupViewController.h; path = JFABaseKitPodFiles/JFABaseViewController/JFABaseTableGroupViewController.h; sourceTree = SOURCE_ROOT; };
+		F8E148641B8EEFC2008ACE01 /* JFABaseTableGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JFABaseTableGroupViewController.m; path = JFABaseKitPodFiles/JFABaseViewController/JFABaseTableGroupViewController.m; sourceTree = SOURCE_ROOT; };
+		F8E148651B8EEFC2008ACE01 /* JFABaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JFABaseTableViewController.h; path = JFABaseKitPodFiles/JFABaseViewController/JFABaseTableViewController.h; sourceTree = SOURCE_ROOT; };
+		F8E148661B8EEFC2008ACE01 /* JFABaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JFABaseTableViewController.m; path = JFABaseKitPodFiles/JFABaseViewController/JFABaseTableViewController.m; sourceTree = SOURCE_ROOT; };
+		F8E148671B8EEFC2008ACE01 /* JFABaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JFABaseViewController.h; path = JFABaseKitPodFiles/JFABaseViewController/JFABaseViewController.h; sourceTree = SOURCE_ROOT; };
+		F8E148681B8EEFC2008ACE01 /* JFABaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JFABaseViewController.m; path = JFABaseKitPodFiles/JFABaseViewController/JFABaseViewController.m; sourceTree = SOURCE_ROOT; };
+		F8E148731B8EF830008ACE01 /* UIColor+JFAExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+JFAExtend.h"; sourceTree = "<group>"; };
+		F8E148741B8EF830008ACE01 /* UIColor+JFAExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JFAExtend.m"; sourceTree = "<group>"; };
+		F8E148761B8EFB7F008ACE01 /* NSDictionary+JFASafeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JFASafeObject.h"; sourceTree = "<group>"; };
+		F8E148771B8EFB7F008ACE01 /* NSDictionary+JFASafeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JFASafeObject.m"; sourceTree = "<group>"; };
+		F8E148791B8F00F9008ACE01 /* NSMutableDictionary+JFASafeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+JFASafeObject.h"; sourceTree = "<group>"; };
+		F8E1487A1B8F00F9008ACE01 /* NSMutableDictionary+JFASafeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+JFASafeObject.m"; sourceTree = "<group>"; };
+		F8E1487C1B8F1149008ACE01 /* JFABaseDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JFABaseDefine.h; path = JFABaseKitPodFiles/JFABaseDefine.h; sourceTree = SOURCE_ROOT; };
+		F8E1487D1B8F126F008ACE01 /* JFABaseKitHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JFABaseKitHeader.h; path = JFABaseKitPodFiles/JFABaseKitHeader.h; sourceTree = SOURCE_ROOT; };
+		F8E148811B8F34CA008ACE01 /* JFANetWorkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFANetWorkService.h; sourceTree = "<group>"; };
+		F8E148821B8F34CA008ACE01 /* JFANetWorkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFANetWorkService.m; sourceTree = "<group>"; };
+		F8E148841B8FF117008ACE01 /* NSString+JFAExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JFAExtend.h"; sourceTree = "<group>"; };
+		F8E148851B8FF117008ACE01 /* NSString+JFAExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JFAExtend.m"; sourceTree = "<group>"; };
+		F8E1488C1B8FF5D1008ACE01 /* JFACustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFACustomView.h; sourceTree = "<group>"; };
+		F8E1488D1B8FF5D1008ACE01 /* JFACustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFACustomView.m; sourceTree = "<group>"; };
+		F8E1488F1B8FF5FD008ACE01 /* JFALoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFALoadingView.h; sourceTree = "<group>"; };
+		F8E148901B8FF5FD008ACE01 /* JFALoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFALoadingView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F8E147D61B8EBBE7008ACE01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8E147EF1B8EBBE8008ACE01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F8E147D01B8EBBE7008ACE01 = {
+			isa = PBXGroup;
+			children = (
+				F8E147DB1B8EBBE7008ACE01 /* JFABaseKit */,
+				F8E147F51B8EBBE8008ACE01 /* JFABaseKitTests */,
+				F8E147DA1B8EBBE7008ACE01 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F8E147DA1B8EBBE7008ACE01 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F8E147D91B8EBBE7008ACE01 /* JFABaseKit.app */,
+				F8E147F21B8EBBE8008ACE01 /* JFABaseKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F8E147DB1B8EBBE7008ACE01 /* JFABaseKit */ = {
+			isa = PBXGroup;
+			children = (
+				F8E1487D1B8F126F008ACE01 /* JFABaseKitHeader.h */,
+				F8E1487C1B8F1149008ACE01 /* JFABaseDefine.h */,
+				F8E1488B1B8FF5AE008ACE01 /* JFACustomView */,
+				F8E148801B8F34AB008ACE01 /* JFANetWorkService */,
+				F8E148721B8EF808008ACE01 /* JFACategory */,
+				F8E1480F1B8EBF62008ACE01 /* JFABaseItem */,
+				F8E148021B8EBE66008ACE01 /* JFABaseViewController */,
+				F8E147E01B8EBBE7008ACE01 /* AppDelegate.h */,
+				F8E147E11B8EBBE8008ACE01 /* AppDelegate.m */,
+				F8E147E31B8EBBE8008ACE01 /* ViewController.h */,
+				F8E147E41B8EBBE8008ACE01 /* ViewController.m */,
+				F8E147E61B8EBBE8008ACE01 /* Main.storyboard */,
+				F8E147E91B8EBBE8008ACE01 /* Images.xcassets */,
+				F8E147EB1B8EBBE8008ACE01 /* LaunchScreen.xib */,
+				F8E147DC1B8EBBE7008ACE01 /* Supporting Files */,
+			);
+			path = JFABaseKit;
+			sourceTree = "<group>";
+		};
+		F8E147DC1B8EBBE7008ACE01 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F8E147DD1B8EBBE7008ACE01 /* Info.plist */,
+				F8E147DE1B8EBBE7008ACE01 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F8E147F51B8EBBE8008ACE01 /* JFABaseKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				F8E147F81B8EBBE8008ACE01 /* JFABaseKitTests.m */,
+				F8E147F61B8EBBE8008ACE01 /* Supporting Files */,
+			);
+			path = JFABaseKitTests;
+			sourceTree = "<group>";
+		};
+		F8E147F61B8EBBE8008ACE01 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F8E147F71B8EBBE8008ACE01 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F8E148021B8EBE66008ACE01 /* JFABaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F8E148611B8EEFC2008ACE01 /* JFABaseNavController.h */,
+				F8E148621B8EEFC2008ACE01 /* JFABaseNavController.m */,
+				F8E148631B8EEFC2008ACE01 /* JFABaseTableGroupViewController.h */,
+				F8E148641B8EEFC2008ACE01 /* JFABaseTableGroupViewController.m */,
+				F8E148651B8EEFC2008ACE01 /* JFABaseTableViewController.h */,
+				F8E148661B8EEFC2008ACE01 /* JFABaseTableViewController.m */,
+				F8E148671B8EEFC2008ACE01 /* JFABaseViewController.h */,
+				F8E148681B8EEFC2008ACE01 /* JFABaseViewController.m */,
+			);
+			name = JFABaseViewController;
+			sourceTree = "<group>";
+		};
+		F8E1480F1B8EBF62008ACE01 /* JFABaseItem */ = {
+			isa = PBXGroup;
+			children = (
+				F8E1485B1B8EEFB0008ACE01 /* JFATableCellItem.h */,
+				F8E1485C1B8EEFB0008ACE01 /* JFATableCellItem.m */,
+				F8E1485D1B8EEFB0008ACE01 /* JFATableGroupCellItem.h */,
+				F8E1485E1B8EEFB0008ACE01 /* JFATableGroupCellItem.m */,
+			);
+			name = JFABaseItem;
+			sourceTree = "<group>";
+		};
+		F8E148721B8EF808008ACE01 /* JFACategory */ = {
+			isa = PBXGroup;
+			children = (
+				F8E148731B8EF830008ACE01 /* UIColor+JFAExtend.h */,
+				F8E148741B8EF830008ACE01 /* UIColor+JFAExtend.m */,
+				F8E148761B8EFB7F008ACE01 /* NSDictionary+JFASafeObject.h */,
+				F8E148771B8EFB7F008ACE01 /* NSDictionary+JFASafeObject.m */,
+				F8E148791B8F00F9008ACE01 /* NSMutableDictionary+JFASafeObject.h */,
+				F8E1487A1B8F00F9008ACE01 /* NSMutableDictionary+JFASafeObject.m */,
+				F8E148841B8FF117008ACE01 /* NSString+JFAExtend.h */,
+				F8E148851B8FF117008ACE01 /* NSString+JFAExtend.m */,
+			);
+			name = JFACategory;
+			path = JFABaseKitPodFiles/JFACategory;
+			sourceTree = SOURCE_ROOT;
+		};
+		F8E148801B8F34AB008ACE01 /* JFANetWorkService */ = {
+			isa = PBXGroup;
+			children = (
+				F8E148811B8F34CA008ACE01 /* JFANetWorkService.h */,
+				F8E148821B8F34CA008ACE01 /* JFANetWorkService.m */,
+			);
+			name = JFANetWorkService;
+			path = JFABaseKitPodFiles/JFANetWorkService;
+			sourceTree = SOURCE_ROOT;
+		};
+		F8E1488B1B8FF5AE008ACE01 /* JFACustomView */ = {
+			isa = PBXGroup;
+			children = (
+				F8E1488C1B8FF5D1008ACE01 /* JFACustomView.h */,
+				F8E1488D1B8FF5D1008ACE01 /* JFACustomView.m */,
+				F8E1488F1B8FF5FD008ACE01 /* JFALoadingView.h */,
+				F8E148901B8FF5FD008ACE01 /* JFALoadingView.m */,
+			);
+			name = JFACustomView;
+			path = JFABaseKitPodFiles/JFACustomView;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F8E147D81B8EBBE7008ACE01 /* JFABaseKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8E147FC1B8EBBE8008ACE01 /* Build configuration list for PBXNativeTarget "JFABaseKit" */;
+			buildPhases = (
+				F8E147D51B8EBBE7008ACE01 /* Sources */,
+				F8E147D61B8EBBE7008ACE01 /* Frameworks */,
+				F8E147D71B8EBBE7008ACE01 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JFABaseKit;
+			productName = JFABaseKit;
+			productReference = F8E147D91B8EBBE7008ACE01 /* JFABaseKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F8E147F11B8EBBE8008ACE01 /* JFABaseKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8E147FF1B8EBBE8008ACE01 /* Build configuration list for PBXNativeTarget "JFABaseKitTests" */;
+			buildPhases = (
+				F8E147EE1B8EBBE8008ACE01 /* Sources */,
+				F8E147EF1B8EBBE8008ACE01 /* Frameworks */,
+				F8E147F01B8EBBE8008ACE01 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F8E147F41B8EBBE8008ACE01 /* PBXTargetDependency */,
+			);
+			name = JFABaseKitTests;
+			productName = JFABaseKitTests;
+			productReference = F8E147F21B8EBBE8008ACE01 /* JFABaseKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F8E147D11B8EBBE7008ACE01 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = JF;
+				TargetAttributes = {
+					F8E147D81B8EBBE7008ACE01 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					F8E147F11B8EBBE8008ACE01 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = F8E147D81B8EBBE7008ACE01;
+					};
+				};
+			};
+			buildConfigurationList = F8E147D41B8EBBE7008ACE01 /* Build configuration list for PBXProject "JFABaseKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F8E147D01B8EBBE7008ACE01;
+			productRefGroup = F8E147DA1B8EBBE7008ACE01 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F8E147D81B8EBBE7008ACE01 /* JFABaseKit */,
+				F8E147F11B8EBBE8008ACE01 /* JFABaseKitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F8E147D71B8EBBE7008ACE01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8E147E81B8EBBE8008ACE01 /* Main.storyboard in Resources */,
+				F8E147ED1B8EBBE8008ACE01 /* LaunchScreen.xib in Resources */,
+				F8E147EA1B8EBBE8008ACE01 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8E147F01B8EBBE8008ACE01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F8E147D51B8EBBE7008ACE01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8E148831B8F34CA008ACE01 /* JFANetWorkService.m in Sources */,
+				F8E148861B8FF117008ACE01 /* NSString+JFAExtend.m in Sources */,
+				F8E148691B8EEFC2008ACE01 /* JFABaseNavController.m in Sources */,
+				F8E1486C1B8EEFC2008ACE01 /* JFABaseViewController.m in Sources */,
+				F8E1486A1B8EEFC2008ACE01 /* JFABaseTableGroupViewController.m in Sources */,
+				F8E148911B8FF5FD008ACE01 /* JFALoadingView.m in Sources */,
+				F8E1488E1B8FF5D1008ACE01 /* JFACustomView.m in Sources */,
+				F8E1486B1B8EEFC2008ACE01 /* JFABaseTableViewController.m in Sources */,
+				F8E148601B8EEFB0008ACE01 /* JFATableGroupCellItem.m in Sources */,
+				F8E1487B1B8F00F9008ACE01 /* NSMutableDictionary+JFASafeObject.m in Sources */,
+				F8E147E51B8EBBE8008ACE01 /* ViewController.m in Sources */,
+				F8E1485F1B8EEFB0008ACE01 /* JFATableCellItem.m in Sources */,
+				F8E147E21B8EBBE8008ACE01 /* AppDelegate.m in Sources */,
+				F8E148781B8EFB7F008ACE01 /* NSDictionary+JFASafeObject.m in Sources */,
+				F8E147DF1B8EBBE7008ACE01 /* main.m in Sources */,
+				F8E148751B8EF830008ACE01 /* UIColor+JFAExtend.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8E147EE1B8EBBE8008ACE01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8E147F91B8EBBE8008ACE01 /* JFABaseKitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F8E147F41B8EBBE8008ACE01 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8E147D81B8EBBE7008ACE01 /* JFABaseKit */;
+			targetProxy = F8E147F31B8EBBE8008ACE01 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F8E147E61B8EBBE8008ACE01 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8E147E71B8EBBE8008ACE01 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F8E147EB1B8EBBE8008ACE01 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8E147EC1B8EBBE8008ACE01 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F8E147FA1B8EBBE8008ACE01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F8E147FB1B8EBBE8008ACE01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F8E147FD1B8EBBE8008ACE01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JFABaseKit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F8E147FE1B8EBBE8008ACE01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JFABaseKit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F8E148001B8EBBE8008ACE01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JFABaseKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JFABaseKit.app/JFABaseKit";
+			};
+			name = Debug;
+		};
+		F8E148011B8EBBE8008ACE01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JFABaseKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JFABaseKit.app/JFABaseKit";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F8E147D41B8EBBE7008ACE01 /* Build configuration list for PBXProject "JFABaseKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8E147FA1B8EBBE8008ACE01 /* Debug */,
+				F8E147FB1B8EBBE8008ACE01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8E147FC1B8EBBE8008ACE01 /* Build configuration list for PBXNativeTarget "JFABaseKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8E147FD1B8EBBE8008ACE01 /* Debug */,
+				F8E147FE1B8EBBE8008ACE01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8E147FF1B8EBBE8008ACE01 /* Build configuration list for PBXNativeTarget "JFABaseKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8E148001B8EBBE8008ACE01 /* Debug */,
+				F8E148011B8EBBE8008ACE01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F8E147D11B8EBBE7008ACE01 /* Project object */;
+}

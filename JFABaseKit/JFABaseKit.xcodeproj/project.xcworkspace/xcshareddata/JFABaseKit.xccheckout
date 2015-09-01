@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>569DF7C6-A43E-44D3-A91D-3F5250E03DAC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>JFABaseKit</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>47B5202B0703EA34C20E558ABAD4BA8D97A2AC75</key>
+		<string>192.168.1.15:ios-dev/jfabasekit</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>JFABaseKit/JFABaseKit.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>47B5202B0703EA34C20E558ABAD4BA8D97A2AC75</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>192.168.1.15:ios-dev/jfabasekit</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>47B5202B0703EA34C20E558ABAD4BA8D97A2AC75</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>47B5202B0703EA34C20E558ABAD4BA8D97A2AC75</string>
+			<key>IDESourceControlWCCName</key>
+			<string>jfabasekit</string>
+		</dict>
+	</array>
+</dict>
+</plist>
