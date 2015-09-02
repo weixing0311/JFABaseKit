@@ -10,9 +10,9 @@
 
 @implementation NSString (JFAExtend)
 
-- (CGFloat)heightForLabelWithWidth:(CGFloat)isWidth isFont:(CGFloat)font{
+- (CGFloat)heightForLabelWithWidth:(CGFloat)isWidth isFont:(UIFont*)labelFont{
     CGFloat height = 0.0f;
-    height = ceilf([self sizeWithFont:font constrainedToSize:CGSizeMake(isWidth, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping].height);
+    height = ceilf([self sizeWithFont:labelFont constrainedToSize:CGSizeMake(isWidth, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping].height);
     return height;
 }
 

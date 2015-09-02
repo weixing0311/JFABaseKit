@@ -11,7 +11,7 @@
 
 @interface NSString (JFAExtend)
 
-- (CGFloat)heightForLabelWithWidth:(CGFloat)isWidth isFont:(CGFloat)font;
+- (CGFloat)heightForLabelWithWidth:(CGFloat)isWidth isFont:(UIFont*)labelFont;
 - (CGFloat)heightForLabelWithWidth:(CGFloat)isWidth isTextFont:(CGFloat)isTextFont;
 - (CGFloat)widthForLabelWithHeight:(CGFloat)isHeight isTextFont:(CGFloat)isTextFont;
 - (CGFloat)widthForLabelWithHeight:(CGFloat)isHeight isFont:(UIFont*)font;
