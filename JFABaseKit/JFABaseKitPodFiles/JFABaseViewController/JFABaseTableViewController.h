@@ -35,4 +35,7 @@
 -(NSArray*)getDataArrayWithResult:(id)result;
 -(void)reloadTableViewData;
 
+-(NSInteger)getPageSize;
+-(CGFloat)getBottomViewHeight;
+-(UIColor*)getViewBackColor;
 @end
