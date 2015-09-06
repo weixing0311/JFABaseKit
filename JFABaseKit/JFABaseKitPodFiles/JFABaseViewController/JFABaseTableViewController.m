@@ -43,6 +43,11 @@
 }
 #pragma mark-initSubViews
 
+-(void)initLoadingView
+{
+    [self initLoadingViewWithFrame:CGRectMake(0, 0, JFA_SCREEN_WIDTH, JFA_SCREEN_HEIGHT-[self getBottomViewHeight]-self.navBarHeight)];
+}
+
 -(void)initTableView
 {
     if (!self.tableView) {
