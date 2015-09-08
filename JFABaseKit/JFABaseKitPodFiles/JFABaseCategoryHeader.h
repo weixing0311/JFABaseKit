@@ -14,5 +14,5 @@
 #import "UIColor+JFAExtend.h"
 #import "NSString+JFAExtend.h"
 #import "UIView+JFAViewAnimation.h"
-
+#import "UIViewController+JFANavigation.h"
 #endif

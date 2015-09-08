@@ -25,4 +25,5 @@
 
 #define JFA_SCREEN_HEIGHT  [UIScreen mainScreen].bounds.size.height
 
+#define IOS7_OR_LATER NLSystemVersionGreaterOrEqualThan(7.0)
 #endif

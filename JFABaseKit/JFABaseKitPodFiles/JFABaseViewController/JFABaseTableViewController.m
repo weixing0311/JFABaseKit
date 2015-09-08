@@ -1,4 +1,4 @@
-//
+ //
 //  JFABaseTableViewController.m
 //  JFABaseKit
 //
@@ -52,9 +52,11 @@
 {
     if (!self.tableView) {
         self.tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, JFA_SCREEN_WIDTH, JFA_SCREEN_HEIGHT-self.getBottomViewHeight-self.navBarHeight) style:UITableViewStylePlain];
+        DLog(@"%f",self.tableView.frame.size.height);
         _tableView.delegate=self;
         _tableView.dataSource=self;
-        _tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+//        _tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
         _tableView.backgroundColor=[UIColor clearColor];
         _tableView.showsHorizontalScrollIndicator=NO;
         _tableView.showsVerticalScrollIndicator=NO;
@@ -152,12 +154,12 @@
 {
     JFATableCellItem* item=[_tbDataArray objectAtIndex:indexPath.row];
     
-    NSString* cellIdentification=[item cellClassName];
+    NSString* cellIdentification=[item cellXibName];
     
     JFATableViewCell * cell=[tableView dequeueReusableCellWithIdentifier:cellIdentification];
     
     if (!cell) {
-        cell=[[[NSBundle mainBundle] loadNibNamed:[item cellClassName] owner:self options:0] objectAtIndex:0];
+        cell=[[[NSBundle mainBundle] loadNibNamed:[item cellXibName] owner:self options:0] objectAtIndex:0];
     }
     if ([self isSelectionStyleNone]) {
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
@@ -168,6 +170,16 @@
     }
     
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    JFATableCellItem* item=[_tbDataArray objectAtIndex:indexPath.row];
+    if (item.selected) {
+        item.selected(item);
+        
+    }
 }
 
 -(void)reloadTableViewWithIndex:(NSInteger)index

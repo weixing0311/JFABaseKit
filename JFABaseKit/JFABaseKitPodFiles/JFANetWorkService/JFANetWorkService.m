@@ -22,7 +22,7 @@
 
 -(NSString*)JFADomin
 {
-    return @"www.iiapple.com";
+    return @"http://www.iiapple.com/";
 }
 
 -(id)getPostResponseSerSerializer
@@ -42,7 +42,7 @@
                        failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
 {
     AFHTTPRequestOperationManager* manager=[AFHTTPRequestOperationManager manager];
-    manager.responseSerializer=[self getGetRequestSerializer];
+    manager.responseSerializer=[self getPostResponseSerSerializer];
     manager.requestSerializer=[self getPostRequestSerializer];
     AFHTTPRequestOperation* operation = [manager POST:[NSString stringWithFormat:@"%@%@",[self JFADomin],url] parameters:paramters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         success(operation,responseObject);

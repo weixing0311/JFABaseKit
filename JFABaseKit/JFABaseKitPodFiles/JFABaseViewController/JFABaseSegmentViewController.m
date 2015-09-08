@@ -31,29 +31,23 @@
     
     self.segmentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, JFA_SCREEN_WIDTH, _height)];
     self.segmentView.clipsToBounds = NO;
-    
+    self.segmentView.backgroundColor = [UIColor grayColor];
     self.view.clipsToBounds = YES;
     self.segmentContentView = [[JFASegmentContentView alloc] initWithFrame:(CGRect){{0,_height}, {JFA_SCREEN_WIDTH, self.view.frame.size.height - _height}}];
     [_segmentContentView setDelegate:self];
     self.segmentContentView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-    
-    [self.view addSubview:_segmentContentView];
     [self.view addSubview:_segmentView];
+
+    [self.view addSubview:_segmentContentView];
     
     self.view.backgroundColor=[UIColor whiteColor];
     
     NSMutableArray *views = [NSMutableArray arrayWithCapacity:_viewControllers.count];
     
     for (NSInteger i = 0 ; i < _viewControllers.count ; i++){
+
         JFABaseTableViewController *vc = [_viewControllers objectAtIndex:i];
         [views addObject:vc.view];
-        
-        if (i == 0) {
-            vc.tableView.scrollsToTop = YES;
-        }
-        else {
-            vc.tableView.scrollsToTop = NO;
-        }
     }
     
     [_segmentContentView setViews:views];
@@ -72,7 +66,7 @@
     [super viewDidAppear:animated];
     
     if (self.segmentContentView.selectPage < _viewControllers.count && self.segmentContentView.selectPage > 0) {
-        UIViewController *currentViewController = [_viewControllers objectAtIndex:self.segmentContentView.selectPage];
+        JFABaseTableViewController *currentViewController = [_viewControllers objectAtIndex:self.segmentContentView.selectPage];
         [currentViewController viewDidAppear:animated];
     }
 }
@@ -108,7 +102,7 @@
     
 }
 
-- (void)segmentContentView:(STSegmentContentView *)segmentContentView selectPage:(NSUInteger)page{
+- (void)segmentContentView:(JFASegmentContentView *)segmentContentView selectPage:(NSUInteger)page{
     [self setSegmentViewIndxe:page];
 }
 

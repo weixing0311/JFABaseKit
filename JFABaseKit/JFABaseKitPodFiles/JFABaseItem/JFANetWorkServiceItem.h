@@ -14,7 +14,7 @@
 
 @property(nonatomic,copy)NSString* method;
 
-@property(nonatomic,copy)NSMutableDictionary* parameters;
+@property(nonatomic,strong)NSMutableDictionary* parameters;
 
 -(instancetype)init;
 
