@@ -9,7 +9,7 @@
 #import "JFABaseViewController.h"
 #import "JFASegmentContentView.h"
 
-@interface JFABaseSegmentViewController : JFABaseViewController
+@interface JFABaseSegmentViewController : JFABaseViewController<JFASegmentContentViewDelegate>
 
 @property (nonatomic, strong, readonly) NSArray *viewControllers;
 @property (nonatomic, strong) UIView *segmentView;

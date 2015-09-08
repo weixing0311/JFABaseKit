@@ -20,7 +20,7 @@
 
 @property (nonatomic, assign) NSUInteger pageCount;
 @property (nonatomic, strong) NSArray *views;
-@property (nonatomic, assign) id <STSegmentContentViewDelegate> delegate;
+@property (nonatomic, assign) id <JFASegmentContentViewDelegate> delegate;
 @property (nonatomic, assign) NSUInteger selectPage;
 
 /**

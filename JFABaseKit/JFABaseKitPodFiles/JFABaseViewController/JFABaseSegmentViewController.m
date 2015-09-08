@@ -7,7 +7,7 @@
 //
 
 #import "JFABaseSegmentViewController.h"
-
+#import "JFABaseTableViewController.h"
 @interface JFABaseSegmentViewController ()
 {
     CGFloat _height;
@@ -29,11 +29,11 @@
     [super viewDidLoad];
     
     
-    self.segmentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, AI_SCREEN_WIDTH, _height)];
+    self.segmentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, JFA_SCREEN_WIDTH, _height)];
     self.segmentView.clipsToBounds = NO;
     
     self.view.clipsToBounds = YES;
-    self.segmentContentView = [[JFASegmentContentView alloc] initWithFrame:(CGRect){{0,_height}, {AI_SCREEN_WIDTH, self.view.frame.size.height - _height}}];
+    self.segmentContentView = [[JFASegmentContentView alloc] initWithFrame:(CGRect){{0,_height}, {JFA_SCREEN_WIDTH, self.view.frame.size.height - _height}}];
     [_segmentContentView setDelegate:self];
     self.segmentContentView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     
@@ -45,7 +45,7 @@
     NSMutableArray *views = [NSMutableArray arrayWithCapacity:_viewControllers.count];
     
     for (NSInteger i = 0 ; i < _viewControllers.count ; i++){
-        STBaseTableViewController *vc = [_viewControllers objectAtIndex:i];
+        JFABaseTableViewController *vc = [_viewControllers objectAtIndex:i];
         [views addObject:vc.view];
         
         if (i == 0) {
