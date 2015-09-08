@@ -13,5 +13,6 @@
 #import "JFANetWorkServiceItem.h"
 #import "JFABaseCategoryHeader.h"
 #import "JFABaseServiceHeader.h"
+#import "JFABaseNavController.h"
 
 #endif

@@ -259,15 +259,15 @@
         AFHTTPRequestOperation* req=nil;
         if ([item.method isEqualToString:@"POST"]) {
             req=[[JFANetWorkService sharedManager] post:item.url paramters:item.parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                
+                [self serviceSucceededWithResult:responseObject operation:operation];
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                
+                [self serviceFailedWithError:error operation:operation];
             }];
         }else{
             req=[[JFANetWorkService sharedManager] get:item.url paramters:item.parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                
+                [self serviceSucceededWithResult:responseObject operation:operation];
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                
+                [self serviceFailedWithError:error operation:operation];
             }];
         }
         

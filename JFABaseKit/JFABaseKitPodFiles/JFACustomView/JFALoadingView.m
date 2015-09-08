@@ -20,7 +20,7 @@
 
 -(instancetype)initWithFrame:(CGRect)frame
 {
-    self=[self initWithFrame:frame];
+    self=[super initWithFrame:frame];
     if (self) {
         contentView = [[UIView alloc] initWithFrame:self.bounds];
         contentView.tag=998;
