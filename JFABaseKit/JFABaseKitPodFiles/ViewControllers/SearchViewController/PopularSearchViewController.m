@@ -7,15 +7,15 @@
 //
 
 #import "PopularSearchViewController.h"
-#import "AIRetrievePopularSearchesService.h"
-#import "AIApplicationUtility.h"
+//#import "AIRetrievePopularSearchesService.h"
+//#import "AIApplicationUtility.h"
 #import "UIImage+Extension.h"
-#import "AISearchAppService.h"
-#import "AIAppListViewController.h"
+//#import "AISearchAppService.h"
+//#import "AIAppListViewController.h"
 #import "AISearchHistoryCell.h"
-#import "MobClick.h"
-#import "AILogCenter.h"
-
+//#import "MobClick.h"
+//#import "AILogCenter.h"
+//
 #define BUTTONITEM_HEIGHT 24
 #define BUTTONITEM_UP_SPACE 0
 #define BUTTONITEM_DOWN_SPACE 12
@@ -29,7 +29,7 @@
 
 #define POPULAR_KEY_MIN_COUNT  12
 
-@interface PopularSearchViewController ()<AINetworkServiceDelegate,UITableViewDataSource,UITableViewDelegate,SearchHistoryCellDelegate>
+@interface PopularSearchViewController ()<UITableViewDataSource,UITableViewDelegate,SearchHistoryCellDelegate>
 {
     NSMutableArray * _popularArray;
     NSArray * _historyArray;
@@ -38,7 +38,6 @@
 
     BOOL _history;
     
-    AIRetrievePopularSearchesService* _popularSearchesService;
     
     NSInteger _popularSearchBGIndex;
     
@@ -79,12 +78,7 @@
         }
     }
     else {
-        _popularSearchesService = [[AIRetrievePopularSearchesService alloc] init];
-        _popularSearchesService.pageIndex = 1;
-        _popularSearchesService.pageSize = 30;
-        _popularSearchesService.delegate = self;
-        _popularSearchesService.managedObjectContext = [AIApplicationUtility sharedInstance].managedObjectContext;
-        [_popularSearchesService startAsynchronous];
+ 
     }
    
     _popularSearchBGIndex = 0;
@@ -143,24 +137,17 @@
     
 }
 
-- (void)viewDidUnload
-{
-    [_popularSearchesService cancel];
-    _popularSearchesService.delegate = nil;
-}
+
 
 - (IBAction)getMoreButtonAction:(id)sender {
     
-    [[AILogCenter defaultCenter] sendActiveEvent:@"603001"];
     if ([_popularArray count] < POPULAR_KEY_MIN_COUNT) {
         //        self.getMoreButton.hidden = YES;
         self.getMoreButton.enabled = NO;
-        [_popularSearchesService startAsynchronous];
     }
     else{
         [self showButtonItem];
     }
-    [MobClick event:@"Search_Change_Click"];
     [_textField resignFirstResponder];
     
 }
@@ -267,9 +254,7 @@
 //    [_popularArray removeAllObjects];
 //
 //    [_popularSearchesService startAsynchronous];
-    if (!_popularSearchesService.isSyncing && ![_popularArray count]) {
         [self getMoreButtonAction:nil];
-    }
     
 }
 
@@ -381,28 +366,28 @@
 }
 #pragma mark = AINetworkServiceDelegate
 
-- (void)service:(AINetworkService *)service succeededWithResult:(NSArray *)result
-{
-    NSMutableArray* hots = [[NSMutableArray alloc] init];
-    for (NSDictionary* dict in result) {
-        [_popularArray addObject:[dict  safeObjectForKey:@"key"]];
-        [hots addObject:[dict  safeObjectForKey:@"key"]];
-    }
-    [[NSUserDefaults standardUserDefaults] setObject:hots forKey:SearchHotKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    if (self.showResultView.subviews.count == 0) {
-        [self showButtonItem];
-    }
-}
-
-- (void)service:(AINetworkService *)service failedWithError:(NSError *)error
-{
-
-    AICustomizedMBProgressHud *hud = [AICustomizedMBProgressHud showHUDAddedTo:self.view type:AI_HudType_Warning animated:YES];
-    hud.removeFromSuperViewOnHide = YES;
-    [hud setLabelText:@"请检查您的网络"];
-    [hud hide:YES afterDelay:3];
-}
+//- (void)service:(AINetworkService *)service succeededWithResult:(NSArray *)result
+//{
+//    NSMutableArray* hots = [[NSMutableArray alloc] init];
+//    for (NSDictionary* dict in result) {
+//        [_popularArray addObject:[dict  safeObjectForKey:@"key"]];
+//        [hots addObject:[dict  safeObjectForKey:@"key"]];
+//    }
+//    [[NSUserDefaults standardUserDefaults] setObject:hots forKey:SearchHotKey];
+//    [[NSUserDefaults standardUserDefaults] synchronize];
+//    if (self.showResultView.subviews.count == 0) {
+//        [self showButtonItem];
+//    }
+//}
+//
+//- (void)service:(AINetworkService *)service failedWithError:(NSError *)error
+//{
+//
+//    AICustomizedMBProgressHud *hud = [AICustomizedMBProgressHud showHUDAddedTo:self.view type:AI_HudType_Warning animated:YES];
+//    hud.removeFromSuperViewOnHide = YES;
+//    [hud setLabelText:@"请检查您的网络"];
+//    [hud hide:YES afterDelay:3];
+//}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [_textField resignFirstResponder];
@@ -421,7 +406,7 @@
     AISearchHistoryCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil){
-        cell = (AISearchHistoryCell*)[[[AIApplicationUtility xibBundle] loadNibNamed:CellIdentifier owner:nil options:nil] objectAtIndex:0];
+        cell = [[AISearchHistoryCell alloc]init];
     }
     BOOL end = indexPath.row == _historyArray.count;
     if ((indexPath.row < _historyArray.count)){//(indexPath.row < _popularArray.count && !_history) ||
@@ -468,13 +453,6 @@
     }
     AISearchHistoryCell *cell = (AISearchHistoryCell *)[tableView cellForRowAtIndexPath:indexPath];
     NSString* keyword = cell.titleLabel.text;
-    if (!_history) {
-        [MobClick event:@"Search_Hot" label:[NSString stringWithFormat:@"iPhone_%@",keyword]];
-        [MobClick event:@"Search_Key_Click" label:@"Hot"];
-    }
-    else {
-        [MobClick event:@"Search_Key_Click" label:@"History"];
-    }
     
     if(self.delegate && [self.delegate respondsToSelector:@selector(didSearchPolularSearch:)]) {
         [self.delegate didSearchPolularSearch:keyword];
@@ -545,11 +523,6 @@
     [self.resultView removeObserver:self forKeyPath:@"frame"];
     self.resultView=nil;
     self.textField = nil;
-    if (_popularSearchesService) {
-        [_popularSearchesService cancel];
-        _popularSearchesService.delegate = nil;
-        _popularSearchesService = nil;
-    }
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "JFARecommonTableViewCell.h"
 #import "JFARecommonTableViewItem.h"
+#import "UIImageView+AFNetworking.h"
 
 @implementation JFARecommonTableViewCell
 

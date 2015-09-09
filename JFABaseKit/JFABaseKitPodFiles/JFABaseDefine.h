@@ -39,6 +39,9 @@
 
 
 /*****************   comeFrom Cmmonendif    *************************/
+
+
+
 typedef enum
 {
     Content_Downloading,
@@ -193,6 +196,15 @@ typedef enum
 
 
 /*******/
+#define QVLogMethodCallStartInfo()            DDLogInfo(@"%d:start", (self))
+#define QVLogMethodCallEndInfo()              DDLogInfo(@"%d:end", (self))
+#define QVLogMethodCallStartCInfo()           DDLogCInfo(@"start")
+#define QVLogMethodCallEndCInfo()             DDLogCInfo(@"end")
+
+#define QVLogMethodCallStartVerbose()         DDLogVerbose(@"%d:start", (self))
+#define QVLogMethodCallEndVerbose()           DDLogVerbose(@"%d:end", (self))
+#define QVLogMethodCallStartCVerbose()        DDLogCVerbose(@"start")
+#define QVLogMethodCallEndCVerbose()          DDLogCVerbose(@"end")
 
 // 按钮等控件的背景色
 #define APP_COLOR_1 @"#005DA4"
@@ -217,16 +229,6 @@ typedef enum
 // Multi-Switcher中选中按钮的字体颜色
 #define APP_COLOR_8 @"dae7f1"
 
-// Use these macros to mark method calling
-#define QVLogMethodCallStartInfo()            DDLogInfo(@"%d:start", (self))
-#define QVLogMethodCallEndInfo()              DDLogInfo(@"%d:end", (self))
-#define QVLogMethodCallStartCInfo()           DDLogCInfo(@"start")
-#define QVLogMethodCallEndCInfo()             DDLogCInfo(@"end")
-
-#define QVLogMethodCallStartVerbose()         DDLogVerbose(@"%d:start", (self))
-#define QVLogMethodCallEndVerbose()           DDLogVerbose(@"%d:end", (self))
-#define QVLogMethodCallStartCVerbose()        DDLogCVerbose(@"start")
-#define QVLogMethodCallEndCVerbose()          DDLogCVerbose(@"end")
 
 #define QVAssertMainThread()                  NSAssert([NSThread isMainThread], @"this method should be called from the main thread");
 #define QVCAssertMainThread()                 NSCAssert([NSThread isMainThread], @"this method should be called from the main thread");

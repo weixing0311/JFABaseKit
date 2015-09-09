@@ -7,9 +7,11 @@
 //
 
 #import "JFAAppManagerCell.h"
+#import "JFABaseServiceHeader.h"
 #import "JFAAppManagerItem.h"
+#import "UIImageView+AFNetworking.h"
 @implementation JFAAppManagerCell
-
+//11
 - (void)awakeFromNib {
     // Initialization code
 }

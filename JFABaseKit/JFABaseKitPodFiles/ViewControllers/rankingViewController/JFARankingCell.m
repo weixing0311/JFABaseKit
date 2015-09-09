@@ -8,6 +8,7 @@
 
 #import "JFARankingCell.h"
 #import "JFARankingItem.h"
+#import "UIImageView+AFNetworking.h"
 @implementation JFARankingCell
 
 - (void)awakeFromNib {

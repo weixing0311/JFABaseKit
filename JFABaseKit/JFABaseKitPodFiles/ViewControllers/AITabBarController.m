@@ -57,6 +57,7 @@
         _controller1=[[JFARecommonTableViewController alloc] initWithNibName:@"JFARecommonTableViewController" bundle:nil];
         _controller1.title = @"热门";
         
+        
         _controller2=[[JFARankingViewController alloc] initWithViewControllers:[self inWithRankingViewControllers] segmentViewHeight:40];
         _controller2.title = @"排行";
         

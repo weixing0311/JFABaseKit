@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JFAAppDetailViewController">
             <connections>
+                <outlet property="appicon" destination="ZPf-T7-S8D" id="ZIT-vz-yUV"/>
+                <outlet property="apptitleLabel" destination="OUo-xv-Zjq" id="1at-Ok-Jgj"/>
+                <outlet property="baseScroller" destination="tx7-Om-bub" id="I6i-Ao-t1M"/>
+                <outlet property="contentView" destination="SOc-Yu-C31" id="SDJ-aq-km4"/>
+                <outlet property="imageScroller" destination="zPy-cm-rka" id="YpQ-u6-Cm3"/>
+                <outlet property="likeAboutView" destination="jo0-C8-8DZ" id="CA4-wO-0as"/>
+                <outlet property="otherInfoView" destination="CvV-5H-UAb" id="58S-6a-7Tl"/>
+                <outlet property="titleView" destination="CAX-0z-i3H" id="LGu-Nk-iVN"/>
+                <outlet property="updataView" destination="umg-wa-q7w" id="QQf-qN-uaa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,7 +26,7 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tx7-Om-bub">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <subviews>
-                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CAX-0z-i3H">
+                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CAX-0z-i3H">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZPf-T7-S8D">
@@ -52,6 +60,22 @@
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zPy-cm-rka">
                             <rect key="frame" x="0.0" y="80" width="600" height="600"/>
                         </scrollView>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SOc-Yu-C31">
+                            <rect key="frame" x="0.0" y="680" width="600" height="100"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="umg-wa-q7w">
+                            <rect key="frame" x="0.0" y="780" width="600" height="100"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CvV-5H-UAb">
+                            <rect key="frame" x="0.0" y="880" width="600" height="100"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jo0-C8-8DZ">
+                            <rect key="frame" x="0.0" y="980" width="600" height="100"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                     </subviews>
                 </scrollView>
             </subviews>

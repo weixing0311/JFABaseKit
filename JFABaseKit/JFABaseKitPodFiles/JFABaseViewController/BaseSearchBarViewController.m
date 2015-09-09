@@ -346,13 +346,11 @@
 //        }
 //        else {
             JFAAppDetailViewController *detailViewController = [[JFAAppDetailViewController alloc] init];
-            detailViewController.parent = @"搜索";
 //            [MobClick event:@"AppDetail_Enter" label:detailViewController.parent];
             DLog(@"logid = %@",self.logid);
             detailViewController.logid = [self.logid stringByAppendingFormat:@"%03d",[[NSNumber numberWithInteger:indexPath.row] intValue]];
 //            detailViewController.app = app;
 
-            detailViewController.keyword = _textField.text;
 //            detailViewController.parentServiceBaseURLKey = self.serviceBaseURLKey;
 //            detailViewController.managedObjectContext = self.managedObjectContext;
             [self.jfa_navigationController pushViewController:detailViewController];

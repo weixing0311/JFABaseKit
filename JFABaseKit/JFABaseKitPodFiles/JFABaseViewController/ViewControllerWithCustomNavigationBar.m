@@ -8,7 +8,6 @@
 
 #import "ViewControllerWithCustomNavigationBar.h"
 #import "AIViewFactory.h"
-#import "AILogCenter.h"
 #import "JFANavigationController.h"
 #import "JFANavigationBar.h"
 #import "UIViewController+JFANavigation.h"
@@ -90,9 +89,6 @@
         logID = [NSString stringWithFormat:@"%@",self.logid];
         if (self.isFromAppDetail) {
             logID = [NSString stringWithFormat:@"%@30",self.logid];
-        }
-        if (![logID isEqualToString:@"601001"]) {
-            [[AILogCenter defaultCenter] sendActiveEvent:logID];
         }
         DLog(@"logid = %@",logID);
         self.isFromAppDetail = NO;
