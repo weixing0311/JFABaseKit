@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-@class JFANavigationBar;
-@class JFANavigationController;
+#import "JFANavigationController.h"
+#import "JFANavigationBar.h"
 @interface UIViewController (JFANavigation)
 @property (nonatomic, strong) JFANavigationController *jfa_navigationController;
 @end

@@ -7,8 +7,7 @@
 //
 
 #import "UIViewController+JFANavigation.h"
-#import "JFANavigationController.h"
-#import "JFANavigationBar.h"
+
 @implementation UIViewController (JFANavigation)
 @dynamic jfa_navigationController;
 //@dynamic JFANavigationBar;

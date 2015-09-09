@@ -6,11 +6,11 @@
 //  Copyright (c) 2015年 JF. All rights reserved.
 //
 
-#import "JFABaseViewController.h"
+#import "ViewControllerWithCustomNavigationBar.h"
 #import "JFATableCellItem.h"
 #import "JFATableViewCell.h"
 
-@interface JFABaseTableViewController : JFABaseViewController<UITableViewDelegate,UITableViewDataSource>
+@interface JFABaseTableViewController : ViewControllerWithCustomNavigationBar<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)UITableView* tableView;
 @property(nonatomic,strong)NSMutableArray* tbDataArray;
