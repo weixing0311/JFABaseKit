@@ -8,5 +8,5 @@
 
 #import <UIKit/UIKit.h>
 @interface JFABaseNavController : UINavigationController
-
+-(void)settitleView:(UIView *)view;
 @end

@@ -19,6 +19,11 @@
     // Do any additional setup after loading the view.
 }
 
+-(void)settitleView:(UIView *)view
+{
+    self.navigationItem.titleView = view;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

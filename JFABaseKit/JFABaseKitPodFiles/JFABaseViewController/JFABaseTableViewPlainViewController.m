@@ -29,7 +29,11 @@
 {
     return nil;
 }
+-(void)hiddenTabbar
+{
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"KHIDDENTABBAR" object:nil];
 
+}
 -(JFANetWorkServiceItem*)getServiceItem
 {
     return nil;

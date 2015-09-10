@@ -9,5 +9,5 @@
 #import "JFABaseTableViewController.h"
 
 @interface JFABaseTableViewPlainViewController : JFABaseTableViewController
-
+-(void)hiddenTabbar;
 @end
