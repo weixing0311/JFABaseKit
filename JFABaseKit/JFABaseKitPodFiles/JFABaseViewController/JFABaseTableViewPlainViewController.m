@@ -1,31 +1,45 @@
 //
-//  JFAAppManagerViewController.m
-//  JFAAppStoreHelper
+//  JFABaseTableViewPlainViewController.m
+//  Pods
 //
-//  Created by 魏星 on 15/9/8.
-//  Copyright © 2015年 JF. All rights reserved.
+//  Created by 魏星 on 15/9/9.
+//
 //
 
-#import "JFAAppManagerViewController.h"
+#import "JFABaseTableViewPlainViewController.h"
 
-@interface JFAAppManagerViewController ()
+@interface JFABaseTableViewPlainViewController ()
 
 @end
 
-@implementation JFAAppManagerViewController
-
+@implementation JFABaseTableViewPlainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self showSegmentView];
-//    self.title = @"软件";
+    [self initLoadingView];
+    
+    [self setMJRefresh];
+    
+    [self setLoadMore];
+    
+    [self loadNewData];
     // Do any additional setup after loading the view.
 }
--(NSString *)iconImageName
+-(NSString*)getTableRequestUrl
 {
-    NSString * imageName = @"tabbar_game@3x.png";
-    return imageName;
+    return nil;
 }
+
+-(JFANetWorkServiceItem*)getServiceItem
+{
+    return nil;
+}
+
+-(NSArray*)getDataArrayWithResult:(id)result
+{
+    return nil;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
