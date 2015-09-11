@@ -18,5 +18,5 @@
 -(void)stoploading;
 
 -(void)startloading;
-
++ (UIView *)createLoadingServiceViewWithFrame:(CGRect)frame autoLayout:(BOOL)autoLayout;
 @end

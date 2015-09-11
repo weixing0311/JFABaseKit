@@ -32,6 +32,11 @@
     if (!self.requestArray) {
         self.requestArray=[[NSMutableArray alloc] initWithCapacity:0];
     }
+    CGRect rect = [UIScreen mainScreen].bounds;
+//    if (self.isHaveSegmentVC) {
+//        rect.origin.y = -96;
+//    }
+    _loadingView = [JFALoadingView createLoadingServiceViewWithFrame:rect autoLayout:NO];
 }
 
 
@@ -81,22 +86,27 @@
     self.loadingView.backgroundColor=self.view.backgroundColor;
     [self.view addSubview:_loadingView];
 }
-
+#pragma mark --- 开始LOADING
 - (void)continueAnimate{
     if(_loadingView){
-        [_loadingView startloading];
+        UIImageView *icon = (UIImageView*)[_loadingView viewWithTag:1024];
+        [icon startAnimating];
+        _loadingView.hidden = NO;
     }
     if (_errorView) {
         self.errorView.hidden=YES;
     }
     if (_networkErrorView) {
         self.networkErrorView.hidden=YES;
+        
     }
 }
 
 - (void)stopAnimate{
     if(_loadingView){
-        [_loadingView stoploading];
+        UIImageView *icon = (UIImageView*)[_loadingView viewWithTag:1024];
+        [icon stopAnimating];
+        _loadingView.hidden = YES;
     }
 }
 
@@ -277,6 +287,7 @@
 -(void)serviceSucceededWithResult:(id)result operation:(AFHTTPRequestOperation*)operation
 {
     [self stopAnimate];
+    
 }
 
 -(void)serviceFailedWithError:(NSError*)error operation:(AFHTTPRequestOperation*)operation

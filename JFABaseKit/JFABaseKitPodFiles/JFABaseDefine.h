@@ -229,6 +229,31 @@ typedef enum
 // Multi-Switcher中选中按钮的字体颜色
 #define APP_COLOR_8 @"dae7f1"
 
+// 按钮等控件的背景色
+#define APP_COLOR_1 @"#005DA4"
+
+#define APP_COLOR_2 @"#BEBEBE"
+
+// 搜索框，页面等的背景色
+#define APP_COLOR_3 @"#F5F5F5"
+
+// 搜索页面的table cell中text label的颜色
+#define APP_COLOR_4 @"#626262"
+
+// 按钮字体的颜色
+#define APP_COLOR_5 @"#38505F"
+
+// pageControl 点的颜色
+#define APP_COLOR_6 @"#32b9ff"
+
+// Setting 和 Search View 的背景色
+#define APP_COLOR_7 @"d5d5d5"
+
+// Multi-Switcher中选中按钮的字体颜色
+#define APP_COLOR_8 @"dae7f1"
+
+// 应用详情占位图背景色
+#define APP_COLOR_9 @"#F6F6F6"
 
 #define QVAssertMainThread()                  NSAssert([NSThread isMainThread], @"this method should be called from the main thread");
 #define QVCAssertMainThread()                 NSCAssert([NSThread isMainThread], @"this method should be called from the main thread");
