@@ -75,5 +75,5 @@ typedef enum
 @property (nonatomic, strong) NSArray *hotListApps;
 @property (nonatomic, strong) NSArray *hotListTag;
 @property (nonatomic, strong) NSDictionary *hotListBannerInfo;
-
+- (void)createAppFromSummaryInfo:(NSDictionary *)appInfo;
 @end

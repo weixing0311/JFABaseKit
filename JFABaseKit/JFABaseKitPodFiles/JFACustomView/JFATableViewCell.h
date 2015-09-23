@@ -12,5 +12,5 @@
 @interface JFATableViewCell : UITableViewCell
 
 -(void)updateCell:(JFATableCellItem*)item;
-
+-(void)createTagViewWithArr:(NSArray *)arr;
 @end
