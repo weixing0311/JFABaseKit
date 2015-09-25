@@ -7,7 +7,8 @@
 //
 
 #import "App.h"
-
+#import "Reachability.h"
+#import "JFASubApps.h"
 @implementation App
 //@dynamic sourceID;
 //@dynamic itunesID;
@@ -88,6 +89,11 @@
     if ([appInfo safeObjectForKey:@"short_brief"]) {
         self.short_brief = [appInfo safeObjectForKey:@"short_brief"];
     }
+    
+    self.releaseDate = [appInfo safeObjectForKey:@"version_time"];
+    self.textSummary = [appInfo safeObjectForKey:@"intro"];
+
+    
     DLog(@"is_safari = %@",[appInfo safeObjectForKey:@"is_safari"]);
     if ([appInfo safeObjectForKey:@"is_safari"]) {
         if ([[appInfo safeObjectForKey:@"is_safari"] isKindOfClass:[NSString class]]) {
@@ -123,7 +129,7 @@
         [dateFormatter setDateFormat: @"yyyy-MM-dd HH:mm:ss"];
         self.version_time = [dateFormatter dateFromString:[appInfo valueForKey:@"version_time"]];
     }
-    
+ 
     NSString* iiapple_score=[appInfo safeObjectForKey:@"iiapple_score"];
     
     if ([iiapple_score isKindOfClass:[NSNumber class]]) {
@@ -153,21 +159,43 @@
         }
     }
     self.downloadCount = [NSNumber numberWithInt:[[appInfo safeObjectForKey:@"down_num"] intValue]];
+    self.downloadUrl = [appInfo safeObjectForKey:@"down_url"];
+    self.downloadKey = [appInfo safeObjectForKey:@"ukey"];
+    self.sign=[appInfo objectForKey:@"sign"];
     
+//    if ([AIApplicationUtility isiPadDevice]) {
+//        self.imageSummary = [appInfo safeObjectForKey:@"ipad_snap_urls"];
+//        if (self.imageSummary == nil || self.imageSummary.length == 0) {
+//            self.imageSummary = [appInfo safeObjectForKey:@"snap_urls"];
+//        }
+//    }
+//    else {
+        if ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus]==kReachableViaWiFi) {
+            NSString* snap_big_urls=[appInfo safeObjectForKey:@"snap_big_urls"];
+            if (snap_big_urls&&[snap_big_urls length]>0) {
+                self.imageSummary=snap_big_urls;
+            }else{
+                self.imageSummary=[appInfo safeObjectForKey:@"snap_urls"];
+            }
+        }else{
+            self.imageSummary = [appInfo safeObjectForKey:@"snap_urls"];
+        }
+//    }
+    
+    self.developer = [appInfo safeObjectForKey:@"dev_name"];
+    self.updateInfo = [appInfo safeObjectForKey:@"ver_intro"];
+    self.recsoftlist = [NSMutableArray array];
+    NSArray* array = [appInfo valueForKey:@"recsoftlist"];
+    if (array && [array isKindOfClass:[NSArray class]]) {
+        for (NSDictionary* dict in [appInfo valueForKey:@"recsoftlist"]) {
+            JFASubApps* listApp= [[JFASubApps alloc]init];
+            [listApp getSubAppsWithDic:dict];
+            [self.recsoftlist addObject:listApp];
+        }
+    }
     // parse tag
     NSArray *tags = [appInfo safeObjectForKey:@"tag_json"];
     DLog(@"%@",tags);
-//    if ([tags isKindOfClass:[NSArray class]]) {
-//        NSMutableArray *tempTags = [NSMutableArray new];
-//        for (NSDictionary *tagJson in tags) {
-//            AppTag *newTag = [AppTag new];
-//            newTag.tag_name = [tagJson safeObjectForKey:@"tag_name"];
-//            newTag.frame_color = [tagJson safeObjectForKey:@"frame_color"];
-//            newTag.bg_color = [tagJson safeObjectForKey:@"bg_color"];
-//            newTag.font_color = [tagJson safeObjectForKey:@"font_color"];
-//            newTag.bg_style = [tagJson safeObjectForKey:@"bg_style"];
-//            [tempTags addObject:newTag];
-//        }
         if (tags.count) {
             self.hotListTag = [NSArray arrayWithArray:tags];
             DLog(@"%@",self.hotListTag);

@@ -10,10 +10,10 @@
 
 @interface NSString (TimeLabel)
 
-+ (NSString*)formatDownloadSpeed:(double)speed;
-+ (NSString*)formatTimeRemaining:(uint64_t)remaining;
-+ (NSString*)formatRate:(double)download withTotal:(double)total;
-+ (NSString*)formatSize:(double)size;
++ (NSString *)formatDownloadSpeed:(double)speed;
++ (NSString *)formatTimeRemaining:(uint64_t)remaining;
++ (NSString *)formatRate:(double)download withTotal:(double)total;
++ (NSString *)formatSize:(double)size;
 + (NSString *)formatSizeWithoutSuffix:(double)size;
 + (NSString *)suffixForSize:(double)size;
 

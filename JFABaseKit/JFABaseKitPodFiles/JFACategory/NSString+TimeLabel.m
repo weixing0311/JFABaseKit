@@ -74,9 +74,9 @@ typedef struct StepInfo{
     return nil;
 }
 
-- (NSString *)formatSize:(double)size
++ (NSString *)formatSize:(double)size;
 {
-    StepInfo step = [NSString stepInfo:size withstep:1024];
+    StepInfo step = [self stepInfo:size withstep:1024];
     if (step.threeStep > 0) {
         return [NSString stringWithFormat:@"%1.1f MB", size / 1024 / 1024];
     } else if(step.twoStep > 0){
