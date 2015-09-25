@@ -176,6 +176,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     JFATableCellItem* item=[_tbDataArray objectAtIndex:indexPath.row];
+    [self hidesBottomBarWhenPushed];
     if (item.selected) {
         item.selected(item);
         

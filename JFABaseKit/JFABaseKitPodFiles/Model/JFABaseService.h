@@ -10,4 +10,5 @@
 
 @interface JFABaseService : NSObject
 + (NSString *)udidString;
++ (NSString *)udidString2;
 @end

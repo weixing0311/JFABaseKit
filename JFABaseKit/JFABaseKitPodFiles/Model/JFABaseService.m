@@ -37,6 +37,28 @@
         return @"";
     }
 }
+
++ (NSString *)udidString2
+{
+    NSString * uuid2 = [JFABaseService getIdentifier:KEY_ID_2];
+    if (!uuid2.length) {
+        uuid2 = [JFABaseService uuid];
+        [JFABaseService storeIdentifier:uuid2 forKey:KEY_ID_2];
+    }
+    if (uuid2&&[uuid2 length]>0) {
+        return uuid2;
+    }
+    return @"";
+}
++ (NSString*)uuid
+{
+    CFUUIDRef puuid = CFUUIDCreate( nil );
+    CFStringRef uuidString = CFUUIDCreateString( nil, puuid );
+    NSString * result = (__bridge NSString *)uuidString;
+    CFRelease(puuid);
+    CFRelease(uuidString);
+    return result;
+}
 #pragma mark - keychain
 + (NSString *)getIdentifier:(NSString *)keyIdentifier{
     NSString * identifier = nil;
