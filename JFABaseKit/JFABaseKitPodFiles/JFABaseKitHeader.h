@@ -14,5 +14,5 @@
 #import "JFABaseCategoryHeader.h"
 #import "JFABaseServiceHeader.h"
 #import "JFABaseNavController.h"
-
+#import "JFABaseService.h"
 #endif
