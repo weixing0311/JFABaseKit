@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface JFAFewCustom : UIView
-
+- (instancetype)initWithFrame:(CGRect)frame SubViews:(NSArray *)subViews;
+-(void)didChangeBtnColor:(NSInteger)a;
 @end
