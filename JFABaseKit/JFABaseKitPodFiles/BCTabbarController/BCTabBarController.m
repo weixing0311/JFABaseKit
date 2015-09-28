@@ -36,9 +36,8 @@
 	self.tabBar = [[BCTabBar alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - tabBarHeight, self.view.bounds.size.width, tabBarHeight + adjust)];
     [self.tabBar setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin];
 	self.tabBar.delegate = self;
-    self.tabBar.backgroundColor=[UIColor whiteColor];
+    self.tabBar.backgroundColor=[UIColor clearColor];
 	
-	self.tabBarView.backgroundColor = [UIColor clearColor];
 	self.tabBarView.tabBar = self.tabBar;
 	[self loadTabs];
 	

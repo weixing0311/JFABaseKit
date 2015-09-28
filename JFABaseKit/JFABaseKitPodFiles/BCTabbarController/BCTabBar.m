@@ -24,7 +24,7 @@
 
 	if (self = [super initWithFrame:aFrame])
     {
-        self.backgroundImage = [[UIImage imageNamed:@"tabbarbackground-green.png"] stretchableImageWithLeftCapWidth:160 topCapHeight:20];
+        self.backgroundImage = [[UIImage imageNamed:@"tabbarbackground-green@2x.png"] stretchableImageWithLeftCapWidth:160 topCapHeight:20];
         
 #if SHOW_TABBAR_ARROW
         self.arrow = [[UIImageView alloc] initWithImage:[UIImage storeImageNamed:@"tab-arrow.png"]];
