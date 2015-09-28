@@ -206,7 +206,7 @@
 -(void)serviceSucceededWithResult:(id)result operation:(AFHTTPRequestOperation *)operation
 {
     DLog(@"%@",result);
-    if ([self isEqualUrl:[self getTableRequestUrl] forOperation:operation]) {
+    if ([self isEqualUrl:[self getServiceItem].url forOperation:operation]) {
         if ([result isKindOfClass:[NSDictionary class]]) {
             NSArray* listArray=[result objectForKey:@"list"];
             if (listArray) {

@@ -300,7 +300,11 @@
     NSString* operationUrl = [operation.request.URL absoluteString];
     NSString* eUrl=[NSString stringWithFormat:@"%@%@",[JFANetWorkService sharedManager].JFADomin,url];
     DLog(@"eUrl==%@  operationUrl==%@",eUrl,operationUrl);
-    return [eUrl isEqualToString:operationUrl];
+//    return [eUrl isEqualToString:operationUrl];
+    if ([operationUrl rangeOfString:eUrl].location != NSNotFound) {
+        return YES;
+    }
+    return NO;
 }
 
 -(void)showNetworkError
