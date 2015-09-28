@@ -24,9 +24,9 @@
     if(([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0))
     {
         self.edgesForExtendedLayout= UIRectEdgeNone;
-        [self.navigationController.navigationBar setBarTintColor:[UIColor colorForHex:@"E82356"]];
+        [self.navigationController.navigationBar setBarTintColor:[UIColor colorForHex:@"ffffff"]];
     }else{
-        [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbg.png"] forBarMetrics:UIBarMetricsDefault];
+        [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_background"] forBarMetrics:UIBarMetricsDefault];
     }
     
     if (!self.requestArray) {
