@@ -71,7 +71,14 @@
     AFHTTPRequestOperationManager* manager=[AFHTTPRequestOperationManager manager];
     manager.responseSerializer=[self getGetResponseSerSerializer];
     manager.requestSerializer=[self getGetRequestSerializer];
-    AFHTTPRequestOperation* operation = [manager POST:[NSString stringWithFormat:@"%@%@",[self JFADomin],url] parameters:paramters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//    AFHTTPRequestOperation* operation = [manager POST:[NSString stringWithFormat:@"%@%@",[self JFADomin],url] parameters:paramters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        success(operation,responseObject);
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        failure(operation,error);
+//    }];
+    
+    
+    AFHTTPRequestOperation* operation = [manager GET:[NSString stringWithFormat:@"%@%@",[self JFADomin],url] parameters:paramters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         success(operation,responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         failure(operation,error);
