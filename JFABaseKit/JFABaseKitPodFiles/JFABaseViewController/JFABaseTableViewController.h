@@ -38,4 +38,8 @@
 -(NSInteger)getPageSize;
 -(CGFloat)getBottomViewHeight;
 -(UIColor*)getViewBackColor;
+
+-(void)presentInViewLikeNavigationBarWithTitle:(NSString *)title;
+
+
 @end

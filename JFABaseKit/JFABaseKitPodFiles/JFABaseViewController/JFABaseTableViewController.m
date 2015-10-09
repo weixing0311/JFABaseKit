@@ -60,6 +60,7 @@
         _tableView.backgroundColor=[UIColor clearColor];
         _tableView.showsHorizontalScrollIndicator=NO;
         _tableView.showsVerticalScrollIndicator=NO;
+        [self setExtraCellLineHidden:_tableView];
     }
     
     [self.view addSubview:_tableView];
@@ -286,6 +287,41 @@
     }
 }
 
+-(void)presentInViewLikeNavigationBarWithTitle:(NSString *)title
+{
+    
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0,JFA_SCREEN_WIDTH,  IOS7_OR_LATER?64:44)];
+    view.backgroundColor = [UIColor clearColor];
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(10, IOS7_OR_LATER?27:7, 50, 30)];
+    [button setTitle:@"返回" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(dismissSuperViewController) forControlEvents:UIControlEventTouchUpInside];
+    [view addSubview:button];
+    
+    
+    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, IOS7_OR_LATER?27:7, 150, 30)];
+    titleLabel.center = CGPointMake(view.center.x, titleLabel.center.y);
+    titleLabel.text = title;
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    [view addSubview:titleLabel];
+    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, IOS7_OR_LATER?63.5f:43.5f,JFA_SCREEN_WIDTH,  0.5f)];
+    
+    lineView.backgroundColor = [UIColor blackColor];
+    [view addSubview:lineView];
+    [self.view addSubview:view];
+}
+-(void)dismissSuperViewController
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
+- (void)setExtraCellLineHidden: (UITableView *)tableView
+{
+    UIView *view =[ [UIView alloc]init];
+    view.backgroundColor = [UIColor clearColor];
+    [tableView setTableFooterView:view];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
