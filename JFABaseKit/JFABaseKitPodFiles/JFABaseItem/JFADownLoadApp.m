@@ -20,6 +20,6 @@
 }
 -(void)DownLoadAppWithID:(NSString *)uid
 {
-    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:[NSString stringWithFormat:@"itms-apps://itunes.app.com/us/app/cnn-app-for-iphone/id%@?mt=8",uid]]];
+   [JFABaseService jumpAppStreWithAppId:uid];
 }
 @end

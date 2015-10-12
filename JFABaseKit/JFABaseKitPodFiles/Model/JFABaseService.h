@@ -12,4 +12,5 @@
 + (NSString *)udidString;
 + (NSString *)udidString2;
 + (BOOL)isAppStoreLock;   //判断是否是上线时用
++ (void)jumpAppStreWithAppId:(NSString *)appid;
 @end

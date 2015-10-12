@@ -159,7 +159,13 @@
     }
 
 }
++(void)jumpAppStreWithAppId:(NSString *)appid
+{
+    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:[NSString stringWithFormat:@"itms-apps://itunes.apple.com/us/app/cnn-app-for-iphone/id%@?mt=8",appid]]];
+    
+    DLog(@"%@",[NSString stringWithFormat:@"itms-apps://itunes.apple.com/us/app/cnn-app-for-iphone/id%@?mt=8",appid]);
 
+}
 
 
 @end
