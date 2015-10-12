@@ -26,8 +26,10 @@
             [self initErrorView];
             
             [self initErrorImageView];
-            
+            errorImageView.image = bgimage;
+
             [self initTapGesture];
+            [self layoutSubviews];
         }
     }
     return self;
@@ -35,7 +37,7 @@
 
 -(void)initErrorView
 {
-    errorView=[[UIView alloc] initWithFrame:CGRectZero];
+    errorView=[[UIView alloc] initWithFrame:self.bounds];
     errorView.backgroundColor=[UIColor clearColor];
     [self addSubview:errorView];
 }
@@ -67,4 +69,28 @@
     
 }
 
+-(void)layoutSubviews
+{
+     [super layoutSubviews];
+    
+    CGRect rect = errorImageView.frame;
+    //    rect.origin.y = AI_STORE_IS_IPHONE5 ? 85 : 40;
+    rect.origin.y = self.frame.size.height*1/4.0 - 20;
+    rect.size.width = AI_SCREEN_WIDTH*3/5.0;
+    rect.origin.x = AI_SCREEN_WIDTH/2 - rect.size.width/2;
+    rect.size.height = AI_SCREEN_WIDTH*3/5.0+10;
+    errorImageView.frame = rect;
+    
+    CGRect frame = errorLabel.frame;
+    CGSize labelSize = [errorLabel sizeThatFits:self.bounds.size];
+    frame.size.width = labelSize.width;
+    frame.size.height = labelSize.height;
+    frame.origin.x = (self.bounds.size.width - labelSize.width) / 2;
+    frame.origin.y = errorImageView.frame.origin.y + errorImageView.frame.size.height + 25;
+    errorLabel.frame = frame;
+    
+ 
+    
+
+}
 @end

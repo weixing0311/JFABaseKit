@@ -7,7 +7,7 @@
 //
 
 #import "JFABaseTableViewController.h"
-
+#import "MBProgressHUD.h"
 @interface JFABaseTableViewController ()
 
 @end
@@ -70,7 +70,7 @@
 -(void)initErrorViewWithFrame:(CGRect)frame
 {
     if (!self.errorView) {
-        self.errorView=[[JFAErrorView alloc] initWithFrame:frame];
+        self.errorView=[[ServiceResultErrorView alloc] initWithFrame:frame];
     }
     
     [self.view insertSubview:self.errorView belowSubview:self.tableView];
@@ -268,8 +268,20 @@
 -(void)showNetworkError
 {
     [self reloadTableViewData];
+    if (_tbDataArray.count) {
+        [self.tableView.header endRefreshing];
+        [self.tableView.footer endRefreshing];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view
+                                                  animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"加载失败";
+        [hud hide:YES afterDelay:1];
+
+    }else{
     [super showNetworkError];
     self.tableView.hidden=YES;
+    }
 }
 
 -(void)refreshForNetworkError
@@ -294,7 +306,7 @@
     view.backgroundColor = [UIColor clearColor];
     UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(10, IOS7_OR_LATER?27:7, 50, 30)];
     [button setTitle:@"返回" forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor colorForHex:@"#007aff"] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(dismissSuperViewController) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:button];
     
@@ -321,6 +333,10 @@
     UIView *view =[ [UIView alloc]init];
     view.backgroundColor = [UIColor clearColor];
     [tableView setTableFooterView:view];
+}
+-(void)BrokenNetworkReconnection
+{
+    [self loadNewData];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

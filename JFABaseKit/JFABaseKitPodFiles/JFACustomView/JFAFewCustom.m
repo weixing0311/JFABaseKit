@@ -31,7 +31,7 @@
 -(void)createLineViewWithFrame:(CGRect)frame
 {
     lineView = [[UIView alloc]initWithFrame:frame];
-    lineView.backgroundColor = [UIColor blueColor];
+    lineView.backgroundColor = [UIColor colorForHex:@"#007aff"];
     lineView.layer.cornerRadius = 5;
     lineView.layer.masksToBounds = YES;
 
@@ -54,7 +54,7 @@
         if (i==0) {
             [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         }else{
-            [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+            [button setTitleColor:[UIColor colorForHex:@"#007aff"] forState:UIControlStateNormal];
         }
         [button addTarget:self action:@selector(didClickTouch:) forControlEvents:UIControlEventTouchUpInside];
         [button setTitle:arr[i] forState:UIControlStateNormal];
@@ -83,7 +83,7 @@
             if (btn.tag==superBtn.tag) {
                 [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             }else  {
-                [btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+                [btn setTitleColor:[UIColor colorForHex:@"#007aff"] forState:UIControlStateNormal];
             }
         }
     }];

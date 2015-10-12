@@ -37,6 +37,12 @@
 //        rect.origin.y = -96;
 //    }
     _loadingView = [JFALoadingView createLoadingServiceViewWithFrame:rect autoLayout:NO];
+    _errorView = [[ServiceResultErrorView alloc]initWithFrame:self.view.frame];
+    
+    _networkErrorView = [[JFASubNetWorkErrorView alloc]initWithFrame:[UIScreen mainScreen].bounds bgimage:[UIImage storeImageNamed:@"bg_network_error_new"]];
+    _networkErrorView.delegate = self;
+    _networkErrorView.hidden = YES;
+    [self.view addSubview:_networkErrorView];
 }
 
 
@@ -58,7 +64,7 @@
 //    self.networkErrorView=errorView;
 //    [self.view addSubview:_networkErrorView];
 //}
-//
+
 
 -(void)refreshForNetworkError
 {
@@ -323,4 +329,12 @@
     }
 }
 
+-(void)didRefreshInfo
+{
+    [self BrokenNetworkReconnection];
+}
+-(void)BrokenNetworkReconnection
+{
+    self.networkErrorView.hidden = YES;
+}
 @end

@@ -25,7 +25,7 @@
         [_titleLabel setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
         [_titleLabel setTextColor:[UIColor colorForHex:@"#3d3d3d"]];
         [_titleLabel setFont:[UIFont boldSystemFontOfSize:20.0]];
-        [_titleLabel setTextAlignment:(NSTextAlignment)UITextAlignmentCenter];
+        [_titleLabel setTextAlignment:NSTextAlignmentCenter];
         [self addSubview:_titleLabel];
     }
     

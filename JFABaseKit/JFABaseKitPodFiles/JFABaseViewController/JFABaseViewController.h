@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "JFALoadingView.h"
-#import "JFANetworkErrorView.h"
-#import "JFAErrorView.h"
+#import "JFASubNetWorkErrorView.h"
+#import "ServiceResultErrorView.h"
 
-@interface JFABaseViewController : UIViewController
+@interface JFABaseViewController : UIViewController<subNetWorkDelegate>
 
 @property(nonatomic,strong)NSMutableArray* requestArray;
-@property(nonatomic,strong)JFALoadingView* loadingView;
-@property(nonatomic,strong)JFAErrorView* errorView;
-@property(nonatomic,strong)JFANetworkErrorView* networkErrorView;
+@property(nonatomic,strong)UIView * loadingView;
+@property(nonatomic,strong)ServiceResultErrorView * errorView;
+@property(nonatomic,strong)JFASubNetWorkErrorView* networkErrorView;
 
 //-(void)initErrorViewWithType:(STErrorViewType)type
 //                       frame:(CGRect)frame;
