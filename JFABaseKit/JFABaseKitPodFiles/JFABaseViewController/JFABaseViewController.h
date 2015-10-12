@@ -31,6 +31,7 @@
 -(UIImage*)backImage;
 - (void)configBackButton;
 - (void)back;
+-(void)BrokenNetworkReconnection;
 - (void)configRightButtonWithTitle:(NSString*)title
                             target:(id)target
                           selector:(SEL)selector;

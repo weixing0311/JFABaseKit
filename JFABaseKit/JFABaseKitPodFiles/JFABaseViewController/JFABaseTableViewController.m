@@ -336,6 +336,7 @@
 }
 -(void)BrokenNetworkReconnection
 {
+    [super BrokenNetworkReconnection];
     [self loadNewData];
 }
 - (void)didReceiveMemoryWarning {

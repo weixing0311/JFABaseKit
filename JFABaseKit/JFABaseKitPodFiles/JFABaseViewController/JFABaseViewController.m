@@ -335,6 +335,7 @@
 }
 -(void)BrokenNetworkReconnection
 {
+    DLog(@"看你走不走----断网刷新");
     self.networkErrorView.hidden = YES;
 }
 @end

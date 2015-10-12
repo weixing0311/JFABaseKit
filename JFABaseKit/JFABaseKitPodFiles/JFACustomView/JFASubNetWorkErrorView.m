@@ -14,6 +14,7 @@
     self = [super initWithFrame:frame bgimage:bgimage];
     if (self) {
         self.hidden = YES;
+        self.backgroundColor = [UIColor whiteColor];
     }
     return self;
 }
