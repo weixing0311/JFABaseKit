@@ -26,6 +26,7 @@
         self.edgesForExtendedLayout= UIRectEdgeNone;
         [self.navigationController.navigationBar setBarTintColor:[UIColor colorForHex:@"ffffff"]];
     }else{
+
         [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_background"] forBarMetrics:UIBarMetricsDefault];
     }
     
@@ -307,6 +308,7 @@
     NSString* eUrl=[NSString stringWithFormat:@"%@%@",[JFANetWorkService sharedManager].JFADomin,url];
     DLog(@"eUrl==%@  operationUrl==%@",eUrl,operationUrl);
 //    return [eUrl isEqualToString:operationUrl];
+    
     if ([operationUrl rangeOfString:eUrl].location != NSNotFound) {
         return YES;
     }
