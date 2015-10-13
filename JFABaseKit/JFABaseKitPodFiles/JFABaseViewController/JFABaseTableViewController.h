@@ -39,7 +39,7 @@
 -(CGFloat)getBottomViewHeight;
 -(UIColor*)getViewBackColor;
 
--(void)presentInViewLikeNavigationBarWithTitle:(NSString *)title;
+-(void)presentInViewLikeNavigationBarWithTitle:(NSString *)title isWhite:(BOOL)iswhite;
 
 
 @end

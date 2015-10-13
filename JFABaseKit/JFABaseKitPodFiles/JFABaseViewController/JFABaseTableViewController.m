@@ -299,14 +299,14 @@
     }
 }
 
--(void)presentInViewLikeNavigationBarWithTitle:(NSString *)title
+-(void)presentInViewLikeNavigationBarWithTitle:(NSString *)title isWhite:(BOOL)iswhite
 {
     
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0,JFA_SCREEN_WIDTH,  IOS7_OR_LATER?64:44)];
     view.backgroundColor = [UIColor clearColor];
     UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(10, IOS7_OR_LATER?27:7, 50, 30)];
     [button setTitle:@"返回" forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor colorForHex:@"#007aff"] forState:UIControlStateNormal];
+    [button setTitleColor:iswhite?[UIColor whiteColor]:[UIColor colorForHex:@"#007aff"] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(dismissSuperViewController) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:button];
     
