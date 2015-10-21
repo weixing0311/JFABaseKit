@@ -136,7 +136,17 @@
 {
     
     UIButton *backButton = [self createButtonForTitle:@"  返回"];
-    UIImage *backImage = [[UIImage storeImageNamed:@"back_button@3x.png"] scaledImageFrom3x];
+    
+    UIImage *image2 = [UIImage storeImageNamed:@"back_button@3x.png"];
+    CGFloat top = 0; // 顶端盖高度
+    CGFloat bottom = 0 ; // 底端盖高度
+    CGFloat left = 15; // 左端盖宽度
+    CGFloat right = 15; // 右端盖宽度
+    UIEdgeInsets insets = UIEdgeInsetsMake(top, left, bottom, right);
+    image2 = [image2 resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeTile];
+
+    
+    UIImage *backImage = [image2 scaledImageFrom3x];
     [backButton setBackgroundImage:backImage forState:UIControlStateNormal];
 //    [backButton setBackgroundImage:[UIImage storeImageNamed:@"back_button_pressed.png"] forState:UIControlStateHighlighted];
     [backButton addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
@@ -400,7 +410,15 @@
     
     UIImage *backImage = [[UIImage storeImageNamed:@"back_button@3x.png"] scaledImageFrom3x];
     [backButton setImage:backImage forState:UIControlStateNormal];
-    [backButton setImage:[[UIImage storeImageNamed:@"back_button_pressed@3x.png"] scaledImageFrom3x] forState:UIControlStateHighlighted];
+    UIImage *image2 = [UIImage storeImageNamed:@"back_button@3x.png"];
+    CGFloat top = 0; // 顶端盖高度
+    CGFloat bottom = 0 ; // 底端盖高度
+    CGFloat left = 15; // 左端盖宽度
+    CGFloat right = 15; // 右端盖宽度
+    UIEdgeInsets insets = UIEdgeInsetsMake(top, left, bottom, right);
+    image2 = [image2 resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeTile];
+
+    [backButton setImage:[image2 scaledImageFrom3x] forState:UIControlStateHighlighted];
     [backButton addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     backButton.frame = CGRectMake(0, 0, backImage.size.width, backImage.size.height);
     

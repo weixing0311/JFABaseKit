@@ -45,7 +45,16 @@
 -(void)initBackNavLeftBar
 {
     self.jfa_navigationBar = [JFANavigationBar baseNavigationBarWithViewController:self];
-    [self.jfa_navigationBar.leftButton setImage:[[UIImage storeImageNamed:@"back_button@3x.png"] scaledImageFrom3x] forState:UIControlStateNormal];
+    
+    UIImage *image2 = [UIImage storeImageNamed:@"back_button@3x.png"];
+    CGFloat top = 0; // 顶端盖高度
+    CGFloat bottom = 0 ; // 底端盖高度
+    CGFloat left = 15; // 左端盖宽度
+    CGFloat right = 15; // 右端盖宽度
+    UIEdgeInsets insets = UIEdgeInsetsMake(top, left, bottom, right);
+    image2 = [image2 resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeTile];
+    
+    [self.jfa_navigationBar.leftButton setImage:[image2 scaledImageFrom3x] forState:UIControlStateNormal];
     if (!self.isFromDownload) {
         CGRect frame = self.jfa_navigationBar.frame;
         UILabel *line = [[UILabel alloc] initWithFrame:CGRectMake(frame.origin.x, frame.size.height, frame.size.width, 1)];

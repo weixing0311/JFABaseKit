@@ -234,6 +234,7 @@
 {
     if (result) {
         self.tableView.footer.hidden=[result count]<[self getPageSize]?YES:NO;
+        self.tableView.footer.hidden = YES;
         if ([result count]<=0) {
             [self showError];
         }else{
@@ -315,6 +316,7 @@
     UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, IOS7_OR_LATER?27:7, 150, 30)];
     titleLabel.center = CGPointMake(view.center.x, titleLabel.center.y);
     titleLabel.text = title;
+    titleLabel.backgroundColor = [UIColor clearColor];
     titleLabel.textAlignment = NSTextAlignmentCenter;
     [view addSubview:titleLabel];
     UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, IOS7_OR_LATER?63.5f:43.5f,JFA_SCREEN_WIDTH,  0.5f)];
