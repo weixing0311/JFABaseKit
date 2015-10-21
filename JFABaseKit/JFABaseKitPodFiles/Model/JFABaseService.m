@@ -148,14 +148,14 @@
 {
     if ([[NSUserDefaults standardUserDefaults]objectForKey:@"APPSTOREKEYFORYOU"]) {
         NSString * conf_onOff = [[NSUserDefaults standardUserDefaults]objectForKey:@"APPSTOREKEYFORYOU"];
-        if (conf_onOff&&[conf_onOff length]>0&&[conf_onOff isEqualToString:@"0"]) {
+        BOOL conf = [conf_onOff boolValue];
+        if (!conf) {
             return NO;
         }else{
             return YES;
         }
     }else{
-        return YES
-        ;
+        return YES;
     }
 
 }
