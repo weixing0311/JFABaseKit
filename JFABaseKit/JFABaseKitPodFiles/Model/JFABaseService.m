@@ -146,18 +146,17 @@
 
 +(BOOL)isAppStoreLock
 {
-    if ([[NSUserDefaults standardUserDefaults]objectForKey:@"APPSTOREKEYFORYOU"]) {
-        NSString * conf_onOff = [[NSUserDefaults standardUserDefaults]objectForKey:@"APPSTOREKEYFORYOU"];
-        BOOL conf = [conf_onOff boolValue];
-        if (!conf) {
-            return NO;
-        }else{
+    NSString * conf_onOff = [[NSUserDefaults standardUserDefaults]objectForKey:@"APPSTOREKEYFORYOU"];
+
+    if (conf_onOff) {
+        if ([conf_onOff isEqualToString:@"1"]) {
             return YES;
+        }else{
+            return NO;
         }
     }else{
-        return YES;
+        return NO;
     }
-
 }
 +(void)jumpAppStreWithAppId:(NSString *)appid
 {
