@@ -22,7 +22,7 @@
 
 -(NSString*)JFADomin
 {
-    return @"http://www.iiapple.com/";
+    return @"http://www.fassionsoft.com/";
 }
 
 -(id)getPostResponseSerSerializer
