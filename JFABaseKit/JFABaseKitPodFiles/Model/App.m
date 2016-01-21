@@ -66,8 +66,9 @@
 
 - (void)createAppFromSummaryInfo:(NSDictionary *)appInfo
 {
-     NSString *bundleID = [appInfo safeObjectForKey:@"pkg_id"];
-    DLog(@"%@",appInfo);
+    DLog(@"appinfo = %@",appInfo);
+
+    NSString *bundleID = [appInfo safeObjectForKey:@"pkg_id"];
     
     if ([[appInfo safeObjectForKey:@"artificial"] boolValue]) {
         [[NSUserDefaults standardUserDefaults] setObject:[appInfo safeObjectForKey:@"artificial"] forKey:bundleID];
