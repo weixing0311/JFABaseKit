@@ -110,6 +110,7 @@
         [self continueAnimate];
         self.isReloading=YES;
         self.isTableLoading=YES;
+        self.tableView.footer.hidden = NO;
         DLog(@"开始刷新");
         [self startService];
     }else{

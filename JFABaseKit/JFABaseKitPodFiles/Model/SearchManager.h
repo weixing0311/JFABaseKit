@@ -18,5 +18,5 @@
 
 - (SearchText *)startSearch:(NSString *)searchString ofType:(AppType)appType;
 - (void)clearSearchTextHistory;
-
+@property (nonatomic,assign)BOOL isMainView;
 @end
