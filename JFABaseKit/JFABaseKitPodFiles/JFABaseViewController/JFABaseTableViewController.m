@@ -85,8 +85,8 @@
     [super stopAnimate];
     self.isReloading=NO;
     self.tableView.hidden=NO;
-    [self.tableView.footer endRefreshing];
-    [self.tableView.header endRefreshing];
+    [self.tableView.mj_footer endRefreshing];
+    [self.tableView.mj_header endRefreshing];
 }
 
 #pragma mark-MJRefresh
@@ -95,7 +95,7 @@
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
     MJRefreshNormalHeader* header=[MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     header.lastUpdatedTimeLabel.hidden=YES;
-    self.tableView.header = header;
+    self.tableView.mj_header = header;
 }
 
 -(NSString*)getTableRequestUrl
@@ -110,12 +110,12 @@
         [self continueAnimate];
         self.isReloading=YES;
         self.isTableLoading=YES;
-        self.tableView.footer.hidden = NO;
+        self.tableView.mj_footer.hidden = NO;
         DLog(@"开始刷新");
         [self startService];
     }else{
-        [self.tableView.footer endRefreshing];
-        [self.tableView.header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
+        [self.tableView.mj_header endRefreshing];
     }
 }
 
@@ -124,8 +124,8 @@
 -(void)setLoadMore
 {
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadMoreData方法）
-    self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
-    self.tableView.footer.hidden=YES;
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    self.tableView.mj_footer.hidden=YES;
 }
 
 -(void)loadMoreData
@@ -233,8 +233,8 @@
 - (void)serviceWithResult:(NSArray *)result operation:(AFHTTPRequestOperation *)operation
 {
     if (result) {
-        self.tableView.footer.hidden=[result count]<[self getPageSize]?YES:NO;
-        self.tableView.footer.hidden = YES;
+        self.tableView.mj_footer.hidden=[result count]<[self getPageSize]?YES:NO;
+        self.tableView.mj_footer.hidden = YES;
         if ([result count]<=0) {
             [self showError];
         }else{
@@ -271,8 +271,8 @@
 {
     [self reloadTableViewData];
     if (_tbDataArray.count) {
-        [self.tableView.header endRefreshing];
-        [self.tableView.footer endRefreshing];
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view
                                                   animated:YES];
