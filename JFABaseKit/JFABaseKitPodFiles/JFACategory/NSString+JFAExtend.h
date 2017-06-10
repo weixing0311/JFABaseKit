@@ -17,4 +17,8 @@
 - (CGFloat)widthForLabelWithHeight:(CGFloat)isHeight isFont:(UIFont*)font;
 -(NSString*)md5String;
 - (CGSize)sizeWithTheFont:(UIFont *)font constrainedToSize:(CGSize)size;
+
++ (NSString*)formatDownloadSpeed:(double)speed;
+
+
 @end

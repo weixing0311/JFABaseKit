@@ -56,4 +56,36 @@
     }
     return textSize;
 }
+
+typedef struct StepInfo{
+    uint32_t oneStep;
+    uint32_t twoStep;
+    uint32_t threeStep;
+} StepInfo;
+
++ (StepInfo) stepInfo:(uint64_t)total withstep:(uint32_t)step
+{
+    StepInfo stepInfo = {0,0,0};
+    stepInfo.threeStep = (uint32_t)(total/(step*step));
+    stepInfo.twoStep = (uint32_t)((total-(stepInfo.threeStep*step*step))/step);
+    stepInfo.oneStep = (uint32_t)(total-(stepInfo.threeStep*step*step)-(stepInfo.twoStep*step));
+    return stepInfo;
+}
+
++ (NSString*)formatDownloadSpeed:(double)speed
+{
+    NSString *downloadSpeed = @"";
+    StepInfo step = [self stepInfo:speed withstep:1024];
+    if (step.threeStep > 0) {
+        downloadSpeed = [NSString stringWithFormat:@"%uMB/S", (uint32_t)step.threeStep];
+    }else if(step.twoStep > 0){
+        downloadSpeed = [NSString stringWithFormat:@"%uKB/S", (uint32_t)step.twoStep];
+    }else if(step.oneStep > 0){
+        downloadSpeed = [NSString stringWithFormat:@"%uB/S", (uint32_t)step.oneStep];
+    }
+    return downloadSpeed;
+}
+
+
+
 @end

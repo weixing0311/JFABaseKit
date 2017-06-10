@@ -1,4 +1,5 @@
- //
+
+//
 //  JFABaseTableViewController.m
 //  JFABaseKit
 //
@@ -156,13 +157,18 @@
 {
     JFATableCellItem* item=[_tbDataArray objectAtIndex:indexPath.row];
     
-    NSString* cellIdentification=[item cellXibName];
+    NSString* cellIdentification=[item cellXibName]?[item cellXibName]:[item cellClassName];
     
     JFATableViewCell * cell=[tableView dequeueReusableCellWithIdentifier:cellIdentification];
     
-    if (!cell) {
+    if (!cell&&[item cellXibName]) {
         cell=[[[NSBundle mainBundle] loadNibNamed:[item cellXibName] owner:self options:0] objectAtIndex:0];
     }
+    
+    if (!cell&&[item cellClassName]) {
+        cell=[[NSClassFromString(cellIdentification) alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentification];
+    }
+
     if ([self isSelectionStyleNone]) {
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
     }

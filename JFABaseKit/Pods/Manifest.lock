@@ -1,1 +1,76 @@
-COCOAPODS: 0.39.0.beta.4
+PODS:
+  - AFNetworking (2.5.4):
+    - AFNetworking/NSURLConnection (= 2.5.4)
+    - AFNetworking/NSURLSession (= 2.5.4)
+    - AFNetworking/Reachability (= 2.5.4)
+    - AFNetworking/Security (= 2.5.4)
+    - AFNetworking/Serialization (= 2.5.4)
+    - AFNetworking/UIKit (= 2.5.4)
+  - AFNetworking+SingleBlock (0.0.1):
+    - AFNetworking (~> 2.0)
+  - AFNetworking/NSURLConnection (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.4)
+  - AFNetworking/Security (2.5.4)
+  - AFNetworking/Serialization (2.5.4)
+  - AFNetworking/UIKit (2.5.4):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - Block-KVO (2.2.1)
+  - BlocksKit (2.2.5):
+    - BlocksKit/All (= 2.2.5)
+  - BlocksKit/All (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - CHTCollectionViewWaterfallLayout (0.9.6):
+    - CHTCollectionViewWaterfallLayout/ObjC (= 0.9.6)
+  - CHTCollectionViewWaterfallLayout/ObjC (0.9.6)
+  - FXPageControl (1.5)
+  - KVOController (1.0.3)
+  - MBProgressHUD (0.9.2)
+  - SSLunarDate (0.0.1)
+  - ViewDeck (2.3.1)
+
+DEPENDENCIES:
+  - AFNetworking (~> 2.5.0)
+  - AFNetworking+SingleBlock (~> 0.0.1)
+  - Block-KVO (~> 2.2.1)
+  - BlocksKit (~> 2.2.5)
+  - CHTCollectionViewWaterfallLayout (~> 0.8)
+  - FXPageControl (~> 1.4)
+  - KVOController (~> 1.0.3)
+  - MBProgressHUD (~> 0.9)
+  - SSLunarDate (~> 0.0.1)
+  - ViewDeck (~> 2.3.1)
+
+SPEC CHECKSUMS:
+  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  AFNetworking+SingleBlock: e736a3faeb61df7ec272c505ec4aa5de73e2b3ae
+  Block-KVO: 64b63a4bde798ab43caa221db916192cee731886
+  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  CHTCollectionViewWaterfallLayout: f4dab06db57b36dcf29e802594175acc76c56615
+  FXPageControl: 97620412515365d10a3282ec0660f49f6401a8f0
+  KVOController: 9fd8f0343670994e4b6f9f0b31f5a45663f3e1cf
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  SSLunarDate: d5d7d581f7e7e157c8d704a5f053b4ebcf760bba
+  ViewDeck: 3e9bfcc36d889155d77ae47811a4d48714ee8d0c
+
+PODFILE CHECKSUM: d49a408387b49f685510adf44d77f8746a1f40a4
+
+COCOAPODS: 1.2.1

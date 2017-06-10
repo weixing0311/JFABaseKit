@@ -13,5 +13,5 @@
 #import "JFANetWorkServiceItem.h"
 #import "JFANetWorkService.h"
 #import "MJRefresh.h"
-
+#import "Reachability.h"
 #endif

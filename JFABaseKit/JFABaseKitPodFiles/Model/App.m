@@ -66,8 +66,9 @@
 
 - (void)createAppFromSummaryInfo:(NSDictionary *)appInfo
 {
-     NSString *bundleID = [appInfo safeObjectForKey:@"pkg_id"];
-    DLog(@"%@",appInfo);
+    DLog(@"appinfo = %@",appInfo);
+
+    NSString *bundleID = [appInfo safeObjectForKey:@"pkg_id"];
     
     if ([[appInfo safeObjectForKey:@"artificial"] boolValue]) {
         [[NSUserDefaults standardUserDefaults] setObject:[appInfo safeObjectForKey:@"artificial"] forKey:bundleID];
@@ -170,7 +171,7 @@
 //        }
 //    }
 //    else {
-        if ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus]==kReachableViaWiFi) {
+        if ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus]==ReachableViaWiFi) {
             NSString* snap_big_urls=[appInfo safeObjectForKey:@"snap_big_urls"];
             if (snap_big_urls&&[snap_big_urls length]>0) {
                 self.imageSummary=snap_big_urls;

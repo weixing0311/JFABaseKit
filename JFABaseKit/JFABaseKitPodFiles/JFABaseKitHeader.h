@@ -8,7 +8,7 @@
 
 #ifndef Pods_JFABaseKitHeader_h
 #define Pods_JFABaseKitHeader_h
-
+#import "XBase.h"
 #import "JFABaseDefine.h"
 #import "JFANetWorkServiceItem.h"
 #import "JFABaseCategoryHeader.h"
