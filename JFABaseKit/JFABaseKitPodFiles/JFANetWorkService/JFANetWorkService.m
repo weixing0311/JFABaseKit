@@ -36,19 +36,24 @@
 }
 
 
--(AFHTTPRequestOperation*)post:(NSString*)url
+-(NSURLSessionTask*)post:(NSString*)url
                      paramters:(NSDictionary*)paramters
-                       success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-                       failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
+                       success:(void (^)(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error))success
+                       failure:(void (^)(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error))failure
 {
-    AFHTTPRequestOperationManager* manager=[AFHTTPRequestOperationManager manager];
+    AFHTTPSessionManager* manager=[AFHTTPSessionManager manager];
     manager.responseSerializer=[self getPostResponseSerSerializer];
     manager.requestSerializer=[self getPostRequestSerializer];
-    AFHTTPRequestOperation* operation = [manager POST:[NSString stringWithFormat:@"%@%@",[self JFADomin],url] parameters:paramters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    
+    
+    NSURLSessionTask * operation = [manager POST:[NSString stringWithFormat:@"%@%@",[self JFADomin],url] parameters:paramters constructingBodyWithBlock:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         success(operation,responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         failure(operation,error);
     }];
+    
+    
+    
     
     return operation;
 }
@@ -63,24 +68,24 @@
     return [AFHTTPRequestSerializer serializer];
 }
 
--(AFHTTPRequestOperation*)get:(NSString*)url
+-(NSURLSessionTask*)get:(NSString*)url
                     paramters:(NSDictionary*)paramters
-                      success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-                      failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
+                      success:(void (^)(NSURLSessionTask *operation, id responseObject))success
+                      failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure
 {
-    AFHTTPRequestOperationManager* manager=[AFHTTPRequestOperationManager manager];
+    AFHTTPSessionManager* manager=[AFHTTPSessionManager manager];
     manager.responseSerializer=[self getGetResponseSerSerializer];
     manager.requestSerializer=[self getGetRequestSerializer];
-//    AFHTTPRequestOperation* operation = [manager POST:[NSString stringWithFormat:@"%@%@",[self JFADomin],url] parameters:paramters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//    NSURLSessionTask* operation = [manager POST:[NSString stringWithFormat:@"%@%@",[self JFADomin],url] parameters:paramters success:^(NSURLSessionTask *operation, id responseObject) {
 //        success(operation,responseObject);
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//    } failure:^(NSURLSessionTask *operation, NSError *error) {
 //        failure(operation,error);
 //    }];
     
     
-    AFHTTPRequestOperation* operation = [manager GET:[NSString stringWithFormat:@"%@%@",[self JFADomin],url] parameters:paramters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSURLSessionTask* operation = [manager GET:[NSString stringWithFormat:@"%@%@",[self JFADomin],url] parameters:paramters success:^(NSURLSessionTask *operation, id responseObject) {
         success(operation,responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
         failure(operation,error);
     }];
     

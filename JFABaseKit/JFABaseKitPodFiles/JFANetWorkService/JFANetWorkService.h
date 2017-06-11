@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "AFURLRequestSerialization.h"
 @interface JFANetWorkService : NSObject
 
 + (instancetype)sharedManager;
@@ -18,17 +18,17 @@
 
 -(id)getPostRequestSerializer;
 
--(AFHTTPRequestOperation*)post:(NSString*)url
+-(NSURLSessionTask*)post:(NSString*)url
                      paramters:(NSDictionary*)paramters
-                       success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-                       failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+                       success:(void (^)(NSURLSessionTask *operation, id responseObject))success
+                       failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure;
 
 -(id)getGetResponseSerSerializer;
 
 -(id)getGetRequestSerializer;
 
--(AFHTTPRequestOperation*)get:(NSString*)url
+-(NSURLSessionTask*)get:(NSString*)url
                     paramters:(NSDictionary*)paramters
-                      success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-                      failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+                      success:(void (^)(NSURLSessionTask *operation, id responseObject))success
+                      failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure;
 @end

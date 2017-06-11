@@ -24,17 +24,17 @@
 {
     
     if (item) {
-        AFHTTPRequestOperation* req=nil;
+        NSURLSessionTask* req=nil;
         if ([item.method isEqualToString:@"POST"]) {
-            req=[[JFANetWorkService sharedManager] post:item.url paramters:item.parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            req=[[JFANetWorkService sharedManager] post:item.url paramters:item.parameters success:^(NSURLSessionTask *operation, id responseObject) {
                 [self serviceSucceededWithResult:responseObject operation:operation];
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            } failure:^(NSURLSessionTask *operation, NSError *error) {
                 [self serviceFailedWithError:error operation:operation];
             }];
         }else{
-            req=[[JFANetWorkService sharedManager] get:item.url paramters:item.parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            req=[[JFANetWorkService sharedManager] get:item.url paramters:item.parameters success:^(NSURLSessionTask *operation, id responseObject) {
                 [self serviceSucceededWithResult:responseObject operation:operation];
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            } failure:^(NSURLSessionTask *operation, NSError *error) {
                 [self serviceFailedWithError:error operation:operation];
             }];
         }
@@ -42,20 +42,20 @@
     }
 }
 
--(void)serviceSucceededWithResult:(id)result operation:(AFHTTPRequestOperation*)operation
+-(void)serviceSucceededWithResult:(id)result operation:(NSURLSessionTask*)operation
 {
     
     
 }
 
--(void)serviceFailedWithError:(NSError*)error operation:(AFHTTPRequestOperation*)operation
+-(void)serviceFailedWithError:(NSError*)error operation:(NSURLSessionTask*)operation
 {
     
 }
 
--(BOOL)isEqualUrl:(NSString*)url forOperation:(AFHTTPRequestOperation*)operation
+-(BOOL)isEqualUrl:(NSString*)url forOperation:(NSURLSessionTask*)operation
 {
-    NSString* operationUrl = [operation.request.URL absoluteString];
+    NSString* operationUrl = [operation.originalRequest.URL absoluteString];
     NSString* eUrl=[NSString stringWithFormat:@"%@%@",[JFANetWorkService sharedManager].JFADomin,url];
     DLog(@"eUrl==%@  operationUrl==%@",eUrl,operationUrl);
     return [eUrl isEqualToString:operationUrl];

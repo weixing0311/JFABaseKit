@@ -18,9 +18,9 @@
 -(JFANetWorkServiceItem *)getServiceItem;
 -(void)startService;
 -(void)startServiceWithItem:(JFANetWorkServiceItem*)item isShowLoading:(BOOL)isShowLoading;
--(void)serviceSucceededWithResult:(id)result operation:(AFHTTPRequestOperation*)operation;
--(void)serviceFailedWithError:(NSError*)error operation:(AFHTTPRequestOperation*)operation;
--(BOOL)isEqualUrl:(NSString*)url forOperation:(AFHTTPRequestOperation*)operation;
+-(void)serviceSucceededWithResult:(id)result operation:(AFHTTPSessionManager*)operation;
+-(void)serviceFailedWithError:(NSError*)error operation:(AFHTTPSessionManager*)operation;
+-(BOOL)isEqualUrl:(NSString*)url forOperation:(AFHTTPSessionManager*)operation;
 -(void)showNetworkError;
 -(void)showError;
 @end

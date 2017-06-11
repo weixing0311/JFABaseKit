@@ -30,7 +30,7 @@
 -(void)stopAnimate;
 -(void)reloadTableViewWithIndex:(NSInteger)index;
 -(void)refreshTableViewWithDataArray:(NSArray*)dataArray;
--(void)serviceWithResult:(NSArray *)result operation:(AFHTTPRequestOperation *)operation;
+-(void)serviceWithResult:(NSArray *)result operation:(NSURLSessionTask *)operation;
 //解析listView 组装tbDataArray
 -(NSArray*)getDataArrayWithResult:(id)result;
 -(void)reloadTableViewData;

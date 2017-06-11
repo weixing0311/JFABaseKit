@@ -204,14 +204,14 @@
     return nil;
 }
 
--(void)updateTableViewDataSourceWithData:(id)data operation:(AFHTTPRequestOperation *)operation
+-(void)updateTableViewDataSourceWithData:(id)data operation:(NSURLSessionTask *)operation
 
 {
     NSArray* dataArray=[self getDataArrayWithResult:data];
     [self serviceWithResult:dataArray operation:operation];
 }
 
--(void)serviceSucceededWithResult:(id)result operation:(AFHTTPRequestOperation *)operation
+-(void)serviceSucceededWithResult:(id)result operation:(NSURLSessionTask *)operation
 {
     DLog(@"%@",result);
     if ([self isEqualUrl:[self getServiceItem].url forOperation:operation]) {
@@ -226,7 +226,7 @@
     }
 }
 
--(void)serviceFailedWithError:(NSError *)error operation:(AFHTTPRequestOperation *)operation
+-(void)serviceFailedWithError:(NSError *)error operation:(NSURLSessionTask *)operation
 {
     if ([self isEqualUrl:[self getTableRequestUrl] forOperation:operation]) {
         if (!self.isReloading) {
@@ -236,7 +236,7 @@
     [self serviceWithResult:nil operation:operation];
 }
 
-- (void)serviceWithResult:(NSArray *)result operation:(AFHTTPRequestOperation *)operation
+- (void)serviceWithResult:(NSArray *)result operation:(NSURLSessionTask *)operation
 {
     if (result) {
         self.tableView.mj_footer.hidden=[result count]<[self getPageSize]?YES:NO;

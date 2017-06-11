@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "XNavigationBar.h"
-
+#import "MBProgressHUD.h"
 
 
 @interface XViewController : UIViewController
